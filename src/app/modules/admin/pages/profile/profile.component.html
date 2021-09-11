@@ -1,0 +1,196 @@
+<div class="container marginTop20">
+  <div class="row">
+    <h4 class="titleNav">
+      <span>Mi Cuenta</span>
+    </h4>
+    <div class="row">
+      <div class="col-lg-3 col-md-12">
+        <div class="card cardPerfil">
+          <form #imageForm=ngForm>
+            <div class=" card-body text-center">
+              <!-- user.image || '../../../../../assets/img/pageAdmin/usuario.png' -->
+              <img [src]="imgUrl || '../../../../../assets/img/pageAdmin/usuario.png'" alt="image" class="imgPerfil">
+              <p class="card-text">{{user?.description || 'Sin Descripción'}}</p>
+              <div class="estilo text-center">
+                <p class="p_inputFile">Agregar&nbsp;
+                  <i class="fa fa-image"></i>
+                </p>
+                <input type="file" class="file" (change)="handleFileInput($event.target.files)" accept="image/*"
+                  required />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-12">
+        <div class="card cardCuenta">
+          <div class="card-body">
+            <h5 class="card-title prefil">{{user?.first_name || 'Sin Nombre'}} {{user?.first_surname || ''}}</h5>
+            <p>Tu información personal es muy importante para nosotros. En esta sesión podras configurar tus datos
+              personales.</p>
+            <footer class="blockquote-footer">Usuario registrado: <cite
+                title="Source Title">{{user?.created_at | date}}</cite>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <!--Sesion de editar usario-->
+  <div class="container titulo">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 class="prefil"> Editar Cuenta</h3>
+      </div>
+      <hr />
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row ">
+      <form class="form-container">
+        <!--Seccion 1-->
+        <div class="form-row " *ngIf="user">
+          <div class="form-group col-md-3">
+            <label><i class="fa fa-user-circle"></i> Primer nombre</label>
+            <input [(ngModel)]="user.first_name" name="first_name" type="text" class="form-control" id="firstname"
+              placeholder="Primer nombre" />
+          </div>
+          <div class="form-group col-md-3">
+            <label><i class="fa fa-user-circle-o"></i> Segundo nombre</label>
+            <input [(ngModel)]="user.last_name" name="last_name" type="text" class="form-control" id="name"
+              placeholder="Segundo nombre" />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="firstsurname"><i class="fa fa-user-circle"></i> Primer apellido</label>
+            <input [(ngModel)]="user.first_surname" name="first_surname" type="email" class="form-control"
+              id="firstsurname" placeholder="Primer apellido" />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="surname"><i class="fa fa-user-circle-o"></i> Segundo apellido</label>
+            <input [(ngModel)]="user.last_surname" name="last_surname" type="text" class="form-control" id="surname"
+              placeholder="Segundo apellido" />
+          </div>
+        </div>
+        <hr />
+        <!--Seccion 2-->
+        <div class="form-row" *ngIf="user">
+          <div class="form-group col-md-4">
+            <label><i class="fa fa-venus-mars"></i> Genero</label>
+            <select [(ngModel)]="user.gender" name="gender" id="genero" class="form-control">
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label><i class="fa fa-calendar-check-o"></i> Fecha nacimiento</label>
+            <input [(ngModel)]="user.birthdate" name="birthdate" class="form-control" type="date"
+              value="{{user.birthdate || '01/01/01'}}" id="date" />
+          </div>
+          <div class="form-group col-md-4">
+            <label><i class="fa fa-phone"></i> Telefono</label>
+            <input [(ngModel)]="user.telephone" name="telephone" type="text" class="form-control" id="telefono"
+              placeholder="Telefono" />
+          </div>
+        </div>
+        <hr />
+        <div class="form-row" *ngIf="user">
+          <div class="form-group col-md-4">
+            <label for="web"><i class="fa fa-desktop"></i> Pagina Web</label>
+            <input [(ngModel)]="user.web" name="web" placeholder="Pagina Web" class="form-control" type="text" value=""
+              id="web" />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="schedule"><i class="fa fa-clock-o"></i> Horario de atención</label>
+            <input [(ngModel)]="user.schedule" name="schedule" class="form-control" type="text" value=""
+              id="schedule" />
+            <!-- <select [(ngModel)]="user.document_type_id" name="document_type_id" id="type" class="form-control">
+                    <option selected="documentType.id" *ngFor="let documentType of documentTypes"
+                      [value]="documentType.id">
+                      {{documentType.name}}</option>
+                  </select> -->
+          </div>
+          <div class="form-group col-md-4">
+            <label for="email"><i class="fa fa-envelope"></i> Correo</label>
+            <input [(ngModel)]="user.email" name="email" class="form-control" type="email" value="" id="email"
+              disabled />
+          </div>
+        </div>
+        <div class="form-row" *ngIf="user">
+          <div class="form-group col-md-12">
+            <label for="description"><i class="fa fa-user"></i> Descripción</label>
+            <textarea [(ngModel)]="user.description" name="description" placeholder="Descripción" class="form-control"
+              type="text" value="" id="description"></textarea>
+          </div>
+        </div>
+        <button (click)="UpdateUser(user?.id)" type="button" class="btn btn-block btn-light-outline sombrasBTN">
+          <i class="fa fa-user-plus"></i> Guardar
+        </button>
+        <button type="button" class="btn btn-block btn-light-outline sombrasBTN" data-target="#modalEdit"
+          data-toggle="modal">
+          <i class="fa fa-user-plus"></i> Cambiar contraseña
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="container text-center">
+    <div class="row">
+      <app-mapa [name]="user.first_name || 'Sin nombre'" [lat]="latitudeMap" [lng]="longitudeMap"
+        (location)="Getlocation($event)">
+      </app-mapa>
+    </div>
+  </div>
+  <div class="BtnActualizar">
+    <button class="button" (click)="UpdateProfileMap()">
+      Guardar Ubicación
+      <div class="button__horizontal"></div>
+      <div class="button__vertical"></div>
+    </button>
+  </div>
+</div>
+
+
+<!-- modal Actualizar contraseña -->
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEdit">
+          <mat-icon>edit</mat-icon>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #forma="ngForm" novalidate="novalidate">
+          <div class="row"></div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Contraseña actual</label>
+            <input ngModel name="current_password" type="password" class="form-control" id="current_password" required>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Contraseña nueva</label>
+            <input ngModel name="password" type="password" class="form-control" id="password" required>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Confirmar contraseña</label>
+            <input ngModel name="password_confirmation" type="password" class="form-control" id="password_confirmation"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Correo</label>
+            <input [(ngModel)]="user.email" name="email" type="text" class="form-control" id="emailUpdate" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary rebote" data-dismiss="modal">Cancelar</button>
+        <button [disabled]="!forma.valid" (click)="ActualizarContrasena(forma)" data-dismiss="modal" type="button"
+          class="btn btn-success rebote">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="list-header">
+  <span class="list-title">{{title || 'Lista'}}</span>
+</div>
+<div class="list-content">
+  <table class="list-table">
+    <thead>
+      <tr class="list-table--headers">
+        <th class="list-table--header" *ngFor="let column of columns | keyvalue">
+          {{column.value}}
+        </th>
+        <th *ngIf="actions" class="list-table--header">
+          <i class="fa fa-cogs"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="list-table--item" *ngFor="let item of items || []">
+        <td class="list-table--item-column" *ngFor="let column of columns | keyvalue">
+          {{ item[column.key] || 'n/a'}}
+        </td>
+        <td *ngIf="actions">
+          <button *ngFor="let action of actions || []" class="btn {{action.color || 'sombrasBTN'}} "
+            (click)="action?.callback($event, item)">
+            <i class="fa fa-{{action?.icon || 'bullseye'}}"></i> {{action.title || ''}}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

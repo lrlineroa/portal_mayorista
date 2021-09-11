@@ -1,0 +1,67 @@
+/* Inicio de style de inicio suave
+PRIMERO: animated.
+SEGUNDO: fadeIn.
+TERCERO: fast. */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+/* FIN DE STYLE DE INICIO */
+
+// margin
+.marginTop20 {
+  margin-top: 20px;
+}
+
+
+// Title 
+.titleBlue{
+color: #4E65F8;
+  font-weight: 1000;
+}
+
+.titleNegro{
+color: rgb(0, 0, 0);
+  font-weight: 550;
+   font-family: Comic, Sans, MS
+}
+
+.titleBlanco{
+color: rgb(255, 255, 255);
+  font-weight: 1000;
+}
+
+.main {
+  margin-top: 20px;
+}
+
+//.img-contenedor:hover img {
+//  -webkit-transform: scale(1.25);
+//  -moz-transform: scale(1.25);
+//  -ms-transform: scale(1.25);
+//  -o-transform: scale(1.25);
+//  transform: scale(1.25);
+// }

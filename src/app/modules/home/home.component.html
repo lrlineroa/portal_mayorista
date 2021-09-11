@@ -1,0 +1,287 @@
+<div class="home">
+
+  <div class="header">
+    <div class="content-login">
+      <span class="item-menu">Sobre nosotros |</span>&nbsp;
+      <span [routerLink]="[ '/login']" class="item-menu">Ingresa |</span>&nbsp;
+      <span [routerLink]="[ '/login/signup']" class="item-menu">Regístrate</span>
+    </div>
+    <div class="content-logo">
+      <div [routerLink]="['/home']" class="item-logo">
+        <img class="img-logo" src="../../../assets/img/imgClientes/logo1.png">
+      </div>
+      <div class="item-search">
+        <mat-form-field appearance="outline">
+          <mat-label>Busqueda avanzada</mat-label>
+          <input matInput placeholder="Busqueda avanzada" (keyup.enter)="BusquedaAvanzada(buscarTexto.value)"
+            #buscarTexto>
+          <mat-icon matSuffix (click)="BusquedaAvanzada(buscarTexto.value)"><img class="img-lupa"
+              src="../../../assets/img/imgClientes/Ilupa.png"></mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="item-icons">
+        <img class="icono-Menuizquierda" src="../../../assets/img/imgClientes/IListaCo.png">
+      </div>
+    </div>
+    <div class="content-iconos">
+      <div class="item-menu-icons">
+        <img class="icono-Menu" src="../../../assets/img/imgClientes/IconoLista.png">&nbsp;
+        <img [routerLink]="['/admin/product/create-product']" class="icono-Menu"
+          src="../../../assets/img/imgClientes/IconoEstrella.png">&nbsp;
+        <img class="icono-Menu" src="../../../assets/img/imgClientes/IconoRayo.png">&nbsp;
+        <img class="icono-Menu" src="../../../assets/img/imgClientes/Iconocupon.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="body-header">
+    <div class="content-banner" *ngIf="router.url !== '/home/search-product'">
+      <div class="banner-item">
+        <div id="carouselExampleFade1" class="carousel slide carousel-fade">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions1" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions3" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="4000">
+              <img src="../../../assets/img/imgPromo/img3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="4000">
+              <img src="../../../assets/img/imgPromo/img2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="4000">
+              <img src="../../../assets/img/imgPromo/img1.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleFade1" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleFade1" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="banner-item-prodcts5" *ngIf="router.url !== '/home/search-product'">
+        <div *ngFor="let product of productFive_Pro" class="item-product">
+          <span>{{product.name}}</span>
+          <div class="img-card text-center">
+            <img
+              [src]="(product.image1 === nullImage) || (product.image1 === null) ? imgDefault : urlImgs+product.image1">
+          </div>
+          <div class="accions">
+            <img src="../../../assets/img/imgClientes/IVista.png">&nbsp;
+            <img src="../../../assets/img/imgClientes/ICorazon.png">&nbsp;
+            <!-- <img src="../../../assets/img/imgClientes/ICOmpartir.png">&nbsp; -->
+            <img src="../../../assets/img/imgClientes/ICOmment.png">&nbsp;
+            <span class="badge badge-info">{{ product.price | currency: "COP":"symbol-narrow" }}</span>
+          </div>
+        </div>
+      </div>
+    </div>&nbsp;&nbsp;
+    <div class="product-item-one" *ngIf="router.url !== '/home/search-product'">
+      <span>{{productOne_Pro[0].name}}</span>
+      <div class="img-card-one text-center">
+        <img
+          [src]="(productOne_Pro[0].image1 === nullImage) || (productOne_Pro[0].image1 === null) ? imgDefault : urlImgs+productOne_Pro[0].image1">
+      </div>
+      <p class="text-muted">{{productOne_Pro[0].description}}</p>
+      <div class="accions-one">
+        <img src="../../../assets/img/imgClientes/IVista.png">&nbsp;
+        <img src="../../../assets/img/imgClientes/ICorazon.png">&nbsp;
+        <!-- <img src="../../../assets/img/imgClientes/ICOmpartir.png">&nbsp; -->
+        <img src="../../../assets/img/imgClientes/ICOmment.png">&nbsp;
+        <span class="badge badge-info">{{ productOne_Pro[0].price | currency: "COP":"symbol-narrow" }}</span>
+      </div>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div [class]="router.url === '/home/search-product' ? 'content-user-menuVertical' : 'content-user'">
+      <span class="txt-user text-primary">{{'¡BIENVENIDO!'}}</span>
+      <div class="img-card-user text-center">
+        <img src="../../../assets/img/imgClientes/Iusuario.png">&nbsp;
+        <span class="txt-user">User master</span>
+      </div>
+      <div class="img-card-userMenu text-center">
+        <img src="../../../assets/img/imgClientes/ICorazon.png">&nbsp;
+        <span class="txt-user">Lista de deseos</span>
+      </div>
+      <div class="img-card-userMenu text-center">
+        <img src="../../../assets/img/imgClientes/IEstrella.png">&nbsp;
+        <span class="txt-user">Seguidos</span>
+      </div>
+      <div class="img-card-userMenu text-center">
+        <img src="../../../assets/img/imgClientes/IReloj.png">&nbsp;
+        <span class="txt-user">Últimas visitas</span>
+      </div>
+      <div class="img-card-userMenu text-center">
+        <img src="../../../assets/img/imgClientes/ILista.png">&nbsp;
+        <span class="txt-user">Pedidos</span>
+      </div>
+      <div class="img-card-userMenu text-center">
+        <img src="../../../assets/img/imgClientes/ICUpon.png">&nbsp;
+        <span class="txt-user">Cupones</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Publicidad -->
+  <app-carousel-publicidad *ngIf="router.url === '/home'"></app-carousel-publicidad>
+
+
+  <div class="body-content">
+
+    <div *ngIf="router.url === '/home/search-product'" class="content-body-search">
+      <app-search-product [advanced]="_advanced" [location]="" [categoryFather]="_categoryFather" [published]=""
+        [maximum]="" [minimum]=""> </app-search-product>
+    </div>
+    <div *ngIf="router.url === '/home'" class="content-body-product1">
+      <p><img src="../../../assets/img/imgClientes/IestrellaA.png" alt="">TOP MEJORES PRODUCTOS</p><br>
+      <div class="banner-item-prodcts5">
+        <div *ngFor="let product of productTop2_Pro || []" class="item-product">
+          <span>{{product.name}}</span>
+          <div class="img-card text-center">
+            <img
+              [src]="(product.image1 === nullImage) || (product.image1 === null) ? imgDefault : urlImgs+product.image1">
+          </div>
+          <div class="accions">
+            <img src="../../../assets/img/imgClientes/IVista.png">&nbsp;
+            <img src="../../../assets/img/imgClientes/ICorazon.png">&nbsp;
+            <!-- <img src="../../../assets/img/imgClientes/ICOmpartir.png">&nbsp; -->
+            <img src="../../../assets/img/imgClientes/ICOmment.png">&nbsp;
+            <span class="badge badge-info">{{ product.price | currency: "COP":"symbol-narrow" }}</span>
+          </div>
+        </div>
+      </div>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div *ngIf="router.url === '/home'" class="content-body-product2">
+      <p><img src="../../../assets/img/imgClientes/IestrellaA.png" alt="">TOP LO MÁS VISTO</p><br>
+      <div class="banner-item-prodcts5">
+        <div *ngFor="let product of productTop3_Pro || []" class="item-product">
+          <span>{{product.name}}</span>
+          <div class="img-card text-center">
+            <img
+              [src]="(product.image1 === nullImage) || (product.image1 === null) ? imgDefault : urlImgs+product.image1">
+          </div>
+          <div class="accions">
+            <img src="../../../assets/img/imgClientes/IVista.png">&nbsp;
+            <img src="../../../assets/img/imgClientes/ICorazon.png">&nbsp;
+            <!-- <img src="../../../assets/img/imgClientes/ICOmpartir.png">&nbsp; -->
+            <img src="../../../assets/img/imgClientes/ICOmment.png">&nbsp;
+            <span class="badge badge-info">{{ product.price | currency: "COP":"symbol-narrow" }}</span>
+          </div>
+        </div>
+      </div>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="content-categories">
+      <span class="txt-category text-primary">{{'Categorias'}}</span>
+      <div class="img-card-userMenu text-center" (click)="BuscarAllCategory()">
+        <img matTooltip="Todas las Categorias" matTooltipPosition="above"
+          src="../../../assets/img/img_Default/categoria.png">&nbsp;
+        <span class="txt-category">Todas las Categorias</span>
+      </div>
+      <div class="img-card-userMenu text-center" *ngFor="let item of categories_Pro"
+        (click)="BusquedaCategory(item.id)">
+        <img matTooltip="{{item.name}}" matTooltipPosition="above"
+          [src]="(item.image === nullImage) || (item.image === null) ? imgDefault : urlImgs+item.image">&nbsp;
+        <span class="txt-category">{{item.name}}</span>
+      </div>
+    </div>
+  </div>
+  <app-carousel-publicidad *ngIf="router.url === '/home/search-product'"></app-carousel-publicidad>
+  <div class="more-information">
+    <div class="information" *ngFor="let item of Information">
+      <img [src]="item.img">&nbsp;
+      <span class="txt-information">{{item.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<div>
+  <!--Subfooter-->
+  <div class="subFooter">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h5 class="text-dark">{{'Aprysa.com' | uppercase}}</h5>
+        <h3 class="titleBlue">
+          Vender con nosotros es muy fácil
+        </h3>
+      </div>
+    </div><br><br>
+    <div class="row">
+      <div class="col-md-4 text-center moverIcono">
+        <h3><i class="fa fa-inbox iconoBandera"></i></h3>
+        <h5 class="text-dark">Encuentra el producto perfecto</h5>
+        <p class="text-muted">
+          Nuestra aplicación encontro lo que necesitabas.
+        </p>
+      </div>
+      <div class="col-md-4 text-center moverIcono">
+        <h3><i class="fa fa-shield iconoBandera"></i></h3>
+        <h5 class="text-dark">Publica con confianza</h5>
+        <p class="text-muted">
+          Su producto estara seguro, no compartiremos tu información.
+        </p>
+      </div>
+      <div class="col-md-4 text-center moverIcono">
+        <h3><i class="fa fa-smile-o iconoBandera"></i></h3>
+        <h5 class="text-dark">Disfruta tu producto</h5>
+        <p class="text-muted">
+          Su producto, un producto adecuado, se encontraba con nosotros.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="">
+      <div class="row footer-content">
+        <div class="col-md-4 footerColum">
+          <h4 class="text-center">{{'aprysa.com' | uppercase}}</h4>
+          <p class="text-center">
+            © 2019 Your company. All rights reserved
+          </p>
+        </div>
+        <div class="col-md-4 footerColum">
+          <h4 class="text-center">{{ "aprysa.com" | uppercase }}</h4>
+          <p class="text-center">
+            Quienes somos?
+          </p>
+          <p class="text-center">
+            Quienes somos?
+          </p>
+          <p class="text-center">
+            Quienes somos?
+          </p>
+        </div>
+        <div class="col-md-4 footerColum">
+          <h4 class="text-center">{{ "Redes" | uppercase }}</h4>
+          <p class="text-center">
+            <div class="social-buttons">
+              <a href="https://es-la.facebook.com/" target="_blank"
+                class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
+                <span class="social-button__inner">
+                  <i class="fa fa-facebook-f"></i>
+                </span>
+              </a>
+              <a href="https://www.instagram.com/?hl=es-la" target="_blank"
+                class="social-buttons__button social-button social-button--instagram" aria-label="instagram">
+                <span class="social-button__inner">
+                  <i class="fa fa-instagram"></i>
+                </span>
+              </a>
+              <a href="https://twitter.com/?lang=es" target="_blank"
+                class="social-buttons__button social-button social-button--twitter" aria-label="twitter">
+                <span class="social-button__inner">
+                  <i class="fa fa-twitter"></i>
+                </span>
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

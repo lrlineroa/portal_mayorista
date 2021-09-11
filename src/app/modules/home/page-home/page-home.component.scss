@@ -1,0 +1,499 @@
+// Global
+
+// Zomm Img
+
+//.img-contenedor:hover img {
+//  -webkit-transform: scale(1.25);
+//  -moz-transform: scale(1.25);
+//  -ms-transform: scale(1.25);
+//  -o-transform: scale(1.25);
+//  transform: scale(1.25);
+// }
+
+
+.sombrasBTN:hover {
+  box-shadow: 2px 2px 10px rgb(196, 192, 192),
+    -0.1px -0.1px 3px rgb(218, 215, 215);
+    color: black;
+}
+.sombrasBTN {
+  border-radius: 100px;
+  color: white
+}
+
+// btn modal
+.btnModal:hover {
+  box-shadow: 2px 2px 10px rgb(196, 192, 192),
+    -0.1px -0.1px 3px rgb(218, 215, 215);
+}
+.btnModal {
+  border-radius: 100px;
+  color: black
+}
+
+
+
+// Menu Navbar
+
+
+.titleModalProduct {
+color: #4E65F8;;
+font-weight: 1000;
+}
+
+
+
+.titleNav {
+color: white;
+font-weight: 1000;
+}
+
+nav:hover .titleNav {
+  color: #4E65F8
+}
+
+nav {
+  font-weight: 1000;
+  background-color: rgba(0 , 0, 0, 0.199 );
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 0.9;
+  transition: 0.5s;
+}
+nav:hover {
+  background-color: rgb(245, 244, 244);
+  padding-top: 25px;
+  color: #4E65F8;
+  box-shadow: 2px 2px 10px rgb(216, 213, 213);
+  opacity: 2;
+}
+nav:hover button {
+   background-color: rgb(241, 238, 238);
+  color: black;
+  box-shadow: 2px 2px 10px rgb(216, 213, 213);
+}
+
+.cpointer:hover {
+  box-shadow: 2px 2px 10px rgb(196, 192, 192),
+    -0.1px -0.1px 3px rgb(218, 215, 215);
+    
+}
+.cpointer {
+  border-radius: 100px;
+  border: 0px;
+  color: black;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.ul {
+  margin-bottom: 0%;
+}
+
+
+// Carousel
+
+.btnProductos {
+  border-radius: 0%;
+  font-weight: 1000;
+}
+
+.carousel {
+  box-shadow: 0px 50px 30px -30px rgba(0,0,0,0.3)
+}
+.carousel-caption {
+  bottom: 30px;
+}
+
+.titleCarousel{
+  font-size: 38px;
+  color: rgb(255, 255, 255);
+  font-weight: 1000;
+}
+
+// Iconos
+.iconoDolar {
+  color: green;
+}
+.iconoLocalizacion {
+  color: rgb(93, 169, 255);
+}
+.iconoCategorias {
+  color: rgb(255, 156, 74);
+}
+.iconoSing {
+  color: rgb(93, 169, 255);
+}
+.iconoMas {
+  color: rgb(255, 156, 74);
+}
+.iconoBandera {
+  color: rgb(49, 132, 228);
+}
+.iconoCorazon {
+  color: red;
+}
+.iconoCompartir {
+  color: rgb(49, 132, 228);
+}
+
+.moverIcono {
+  h3 .iconoBandera {
+    
+    transition: .4s;
+  }
+}
+.moverIcono:hover {
+  h3 .iconoBandera {
+    transform: translate(0px, -20px);
+    color: #fc4a1a;
+  }
+  
+}
+
+// Productos
+
+
+
+
+.card {
+  margin: 8px;
+}
+.card:hover {
+  box-shadow: 2px 2px 10px rgb(196, 192, 192),
+    -0.1px -0.1px 3px rgb(218, 215, 215);
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .img-contenedor img {
+    width: 100px;
+  }
+}
+
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+
+
+// Subfooter
+.subFooter {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 30px;
+  background-color: rgb(250, 250, 250);
+}
+
+
+
+// footer
+footer {
+  margin-top: 0px;
+  height: auto;
+  background-color: rgb(241, 238, 238);
+  box-shadow: 2px 2px 10px rgb(216, 213, 213),
+    -0.1px -0.1px 10px rgb(196, 192, 192);
+}
+
+.footerColum {
+  margin-top: 20px;
+}
+
+
+// input busqueda
+input[type=text] {
+  width: 180px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 300px;
+}
+
+// CARDS FlexBox
+
+.cards-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-card {
+  margin: 0%;
+  margin-bottom: 15px; 
+  padding: 5px;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 15px;
+  box-shadow: 0px 40px 30px -30px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: .4s;
+}
+
+.img-card:hover {
+  transform: translate(0px, -4px);
+}
+
+.img-card img {
+  width: 200px;
+  height: 200px;
+}
+
+
+img {
+  width: 200px;
+}
+
+.content-card{
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+
+.cd-pecio-card{
+  color: #4E65F8;
+  font-weight: 1000;
+}
+
+.example-form-field {
+  width: 200px;
+}
+
+.buscarLi{
+  border-radius: 100px;
+  background-color: #F2EEEE;
+}
+
+
+// Carrousel
+.item p {
+  -webkit-transition: height .4s;
+}
+
+
+.item {
+    box-shadow: 2px 2px 10px rgb(223, 223, 223),
+    -0.1px -0.1px 3px rgb(230, 230, 230);
+    margin: 10px;
+    cursor: pointer;
+    padding: 5px;
+    width: 200px;
+    height: 174px;
+    color: #0074e9;
+}
+.item:hover {
+    box-shadow: 2px 2px 10px rgb(196, 192, 192),
+    -0.1px -0.1px 3px rgb(218, 215, 215);
+    margin: 10px;
+    cursor: pointer;
+    
+    font-size: 16px;
+}
+.owl-carousel {
+  box-shadow: 0px 50px 30px -30px rgba(0,0,0,0.3);
+  padding: 20%;
+  margin: 0%;
+  text-align: center !important;
+  width: unset !important;
+}
+
+img.icon{
+	display: block;
+	margin:20px auto;
+	background-color: rgba(255,255,255,.15);
+	width:70px;
+	padding:0px;
+	border-radius: 10%;
+	box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
+	transition:box-shadow .4s;
+}
+
+.itemimg {
+  width: auto;
+}
+
+.main-crr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.iconoMessage {
+  color: rgb(49, 132, 228);
+}
+
+
+// redes sociales
+
+
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -10px;
+
+  &__button {
+    margin: 10px 5px 0;
+  }
+}
+
+$social-button-radius: 70px;
+$social-button-icon-size: 0.3;
+$social-button-background: #fff;
+$social-button-active-color: #fff;
+$social-button-transition-time: 0.10s;
+
+$social-button-colors: (
+  "mail": #0072c6,
+  "facebook": #3b5999,
+  "linkedin": #0077b5,
+  "github": #6e5494,
+  "codepen": #212121,
+  "steam": #7da10e,
+  "snapchat":#eec900,
+  "twitter": #55acee,
+  "instagram": #e4405f,
+  "npmjs": #c12127
+);
+
+.social-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  width: $social-button-radius;
+  height: $social-button-radius;
+  text-decoration: none;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border-radius: 100%;
+    background: $social-button-background;
+    text-align: center;
+  }
+
+  i,
+  svg {
+    position: relative;
+    z-index: 1;
+    transition: $social-button-transition-time;
+  }
+
+  i {
+    font-size: $social-button-radius * $social-button-icon-size;
+  }
+
+  svg {
+    height: percentage($social-button-icon-size);
+    width: percentage($social-button-icon-size);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    transition: $social-button-transition-time;
+  }
+
+  &:focus,
+  &:hover {
+    color: $social-button-active-color;
+
+    &::after {
+      width: 100%;
+      height: 100%;
+      margin-left: -50%;
+    }
+  }
+
+  @each $name, $color in $social-button-colors {
+    &--#{$name} {
+      color: $color;
+
+      &::after {
+        background: $color;
+      }
+    }
+  }
+}
+// redes sociales fin
+
+.footer-content {
+  padding-bottom: 30px;
+}
+
+.row {
+  margin: 0%;
+}
+
+
+.ProductosHeard {
+  margin-top: 30px;
+}
+
+.inputBuscar {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBuscar > * {
+  width: 100%;
+}
+
+.dropdown-item{
+  cursor: pointer;
+  box-shadow: 0px 40px 30px -30px rgba(0, 0, 0, 0.3)
+}
+
+.textVerMas {
+  color: #f44336;
+}
+
+.textVerMas:hover{
+  cursor: pointer;
+  color: #b71c1c;
+}
+
+.publicidad {
+  width: 100%;
+  height: 100px;;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  background: #3494E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

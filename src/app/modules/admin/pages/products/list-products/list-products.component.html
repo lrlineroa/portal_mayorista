@@ -1,0 +1,74 @@
+<div class="title text-center">
+  <h3 class="titleNav">Lista de productos</h3>
+  <p class="text-muted">
+    Esta es tu lista de productos.
+  </p>
+</div>
+<hr>
+<!-- // Productos -->
+<div class="accordion">
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-primary">
+          Nombre Producto
+        </mat-panel-title>
+        <mat-panel-description class="text-primary">
+          Fecha de creación
+          <span class="badge badge-pill badge-info">No.</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Cantidad de Productos: <span class="text-primary">{{products.length}}</span></p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <br>
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+      *ngFor="let product of products; let i= index">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{product.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{product.created_at}}
+          <span class="badge badge-pill badge-info">{{i+1}}</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button class="btn btn-success btn-sm" [routerLink]="[ '/admin/product/product/', product.id ]">Editar
+        producto</button>&nbsp;
+      <button class="btn btn-danger btn-sm" (click)="CapturarDelete(product.id, product.name)"
+        data-target="#modalElimnar" data-toggle="modal">Eliminar</button>
+
+    </mat-expansion-panel>
+    <div *ngIf="products.length === 0" class="alert alert-secondary" role="alert">
+      No has publicado ningún producto.
+    </div>
+
+  </mat-accordion>
+</div>
+
+<!-- Modal Eliminar -->
+<div class="modal fade" id="modalElimnar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="text-muted" id="exampleModalCenterTitle">
+          <mat-icon>delete</mat-icon>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <span aria-hidden="true">
+          <h5 class="">Eliminar producto <span class="text-primary">{{nameProduct}}</span>
+          </h5>
+        </span>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-outline-secondary rebote" data-dismiss="modal">Cancelar</button>
+        <button (click)="DeleteProduct()" data-dismiss="modal" type="button"
+          class="btn btn-success rebote">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+:host {
+  .list-header {
+      padding: 10px;
+      background: #4ca6ff;
+      color: white;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 26px;
+      margin-top: 10px;
+      box-shadow: 0px 50px 30px -30px rgba(0,0,0,0.3);
+  }
+  
+  .list-content {
+      background: whitesmoke;
+      margin-top: 10px;
+      box-shadow: 0px 50px 30px -30px rgba(0,0,0,0.3);
+      border-radius: 3px;
+      padding: 10px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-flow: column nowrap;
+      .list-table {
+        .list-table--header {
+            border-bottom: 1px solid #4ca6ff;
+            padding: 5px;
+        }
+        
+        .list-table--item:nth-child(odd) {
+            background: #e9ecef;
+        }
+        
+        td.list-table--item-column {
+            padding: 10px;
+        }
+      }
+  }
+  
+  
+}

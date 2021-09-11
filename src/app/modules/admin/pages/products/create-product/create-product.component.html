@@ -1,0 +1,177 @@
+<mat-horizontal-stepper linear labelPosition="bottom">
+
+  <!-- section Category -->
+  <mat-step [completed]="validateCategory">
+    <ng-template matStepLabel>
+      Categorias
+    </ng-template>
+    <div class="container titulo">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3>Crear Producto/<span class="text-primary">{{categories.length}}</span> Categorias.</h3>
+          <p class="text-muted">
+            Primero seleccione la categoria de tu producto
+          </p>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <owl-carousel [options]="{items: 5, dots: true, navigation: true}" [items]="categories"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <div data-toggle="tooltip" data-placement="top" title="{{category.name}}"
+        (click)="categoria(category.id, category.name)" class="item" *ngFor="let category of categories">
+        <div class="itemimg">
+          <img class="icon"
+            [src]="category.image === null ? '../../../../../assets/img/img_Default/anadir1.png' : urlImgs+category.image">
+          <p class="text-center">{{category.name}}</p>
+        </div>
+      </div>
+    </owl-carousel>
+    <hr>
+
+    <div class="container titulo">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3> Sub-Categoria</h3>
+          <p class="text-muted">
+            Ahora, selecciona la sub-categoria de tu producto
+          </p>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <!--fin mmenu-->
+    <div class="otraCategoria">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <form class="form-otraCategoria">
+            <!--Seccion 1-->
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <h5><i class="fa fa-hand-pointer-o"></i> Seleccione Sub-Categoria de
+                  <span *ngIf="!loagingSub" class="text-primary">{{nameCAtegory || 'Sin seleccionar'}}</span>
+                  <span *ngIf="loagingSub" class="spinner-border spinner-border-sm text-primary"></span>
+                </h5>
+              </div>
+              <div class="col-md-8">
+                <select [(ngModel)]="opcionSeleccionado" name="opcionSeleccionado" (click)="capturar()">
+                  <option class="text-primary" selected *ngIf="subCategories.length !== 0" [value]="null"> Seleccione..
+                  </option>
+                  <option [value]="subCategorie.id" *ngFor="let subCategorie of subCategories || []">
+                    {{subCategorie.name}}</option>
+                  <option selected *ngIf="subCategories.length === 0" [value]="null"> Sin datos</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="buttonNext" style="vertical-align:middle" mat-button matStepperNext
+        (click)="capturarIDSubcategoria()"><span>Siguiente</span></button>
+    </div>
+  </mat-step>
+  <!-- section Producto -->
+  <mat-step label="Producto" [completed]="validateProduct" [editable]="false">
+    <!--Producto-->
+    <h4><small class="text-primary">{{nameCAtegory}}/{{nameSubcategoria}}</small></h4>
+    <hr>
+    <h4 class="text-center"> Producto </h4>
+    <p class="text-muted">
+      Por favor, llene los datos respectivos de tu producto.
+    </p>
+    <!-- form -->
+    <form #forma="ngForm" novalidate="novalidate">
+      <div class="form-producto">
+        <div style="display: none">
+          <mat-form-field appearance="outline" class="item-producto">
+            <mat-label>category_id</mat-label>
+            <input [(ngModel)]="idSubcategoria" name="category_id" matInput placeholder="Nombre" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="item-producto">
+            <mat-label>Nombre de tu producto</mat-label>
+            <input [(ngModel)]="product.name" name="name" matInput placeholder="Nombre" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="item-producto">
+            <mat-label>Precio</mat-label>
+            <input [(ngModel)]="product.price" name="price" matInput type="number" placeholder="Precio" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="item-producto">
+            <mat-label>Descripción</mat-label>
+            <textarea [(ngModel)]="product.description" name="description" matInput placeholder="Descripción"
+              required></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div *ngIf="caracteristicas.length > 0">
+        <hr>
+        <h4 class="text-center"> Caracteristicas adicionales</h4>
+        <div class="form-producto">
+          <div *ngFor="let item of caracteristicas">
+            <mat-form-field appearance="outline" class="item-producto">
+              <mat-label>{{item.key}}</mat-label>
+              <input matInput ngModel [name]="item.key" [placeholder]="item.key" required>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!--IMGS-->
+      <div class="container marginTop20" style="display: none">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3> Subir imagenes de tu producto</h3>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid" style="display: none">
+        <div class="row justify-content-center">
+          <div class="card-columns">
+            <div class="card text-center">
+              <div class="img-contenedor">
+                <img src="../../../../assets/img/imgProductos/fotografia.png" alt="..." />
+                <div class="estilo text-center">
+                  <p class="p_inputFile">Agregar&nbsp;
+                    <i class="fa fa-image"></i>
+                  </p>
+                  <input ngModel name="image10" type="file" class="file" accept="image/*" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <button mat-button class="btn-block" (click)="Validar(forma)">Validar y guardar producto</button>
+      </div>
+      <hr>
+      <!--Producto fin-->
+      <div>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button (click)="VerDatos()" class="buttonNext" style="vertical-align:middle" mat-button matStepperNext
+          [disabled]="!forma.valid"><span>Siguiente</span></button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- section Fin -->
+  <mat-step label="Imagenes">
+    <h4 class="text-center">Subir imagenes del producto <span class="text-primary">{{productoCreateName}}</span></h4>
+    <p class="text-muted">
+      Suba las mejores imagenes de su producto y dar prioridad a la imagen 1 y 2 ya que son las principales
+    </p>
+    <app-images-product [idProduct]="productoCreateId" [nameProduct]="productoCreateName"></app-images-product>
+    <div>
+    </div>
+  </mat-step>
+
+</mat-horizontal-stepper>

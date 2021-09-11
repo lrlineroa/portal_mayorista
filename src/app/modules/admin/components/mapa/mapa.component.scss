@@ -1,0 +1,59 @@
+agm-map {
+  height: 300px;
+}
+
+.titleNav {
+color: #4E65F8;;
+font-weight: 1000;
+}
+
+
+ .agm-map-container-inner {
+      width: inherit;
+      height: inherit;
+    }
+    .agm-map-content {
+      display:none;
+    }
+
+.map {
+  width: 800px;
+  border-radius: 15px;
+  transition: .4s;
+  border: 1px solid #c9c9c9;
+  box-shadow: 2px 2px 10px rgb(196, 192, 192),
+  -0.1px -0.1px 3px rgb(218, 215, 215);
+  margin-bottom: 30px;
+}
+
+.map:hover {
+  box-shadow: 2px 2px 10px rgb(196, 192, 192),
+  -0.1px -0.1px 3px rgb(218, 215, 215);
+  box-shadow: 0px 40px 30px -30px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (min-width: 1200px) {
+  .map {
+    width: 1050px;
+  }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .map {
+    width: 900px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .map {
+    width: 650px;
+  }
+}
+@media (min-width: 50px) and (max-width: 767px) {
+  .map {
+    width: 480px;
+  }
+}
+
+

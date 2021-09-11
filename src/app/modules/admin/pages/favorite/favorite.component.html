@@ -1,0 +1,25 @@
+<h4 class="titleNav">
+  <span>Productos Favoritos</span>
+</h4>
+<hr>
+<div class="">
+  <div class="cards-productos">
+    <div *ngFor="let favorite of favorites" class="item-card">
+      <div class="img-card">
+        <img onmouseout="this.src='../../../../assets/img/imgProductsPrueba/B1.jpg'"
+          onmouseover="this.src='../../../../assets/img/imgProductsPrueba/B2.jpg'"
+          src="../../../../assets/img/imgProductsPrueba/B1.jpg" alt="..." />
+      </div>
+      <h5 class="cd-title-card">{{favorite.name}}</h5>
+      <div class="content-card">
+
+        <p class="cd-pecio-card">
+          {{ favorite.money | currency: "COP":"symbol-narrow" }}
+        </p>&nbsp;&nbsp;
+        <h4 class="cd-icono-card">
+          <i class="fa fa-heart iconoCorazon"></i>
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

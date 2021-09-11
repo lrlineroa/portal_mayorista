@@ -1,0 +1,121 @@
+<nav class="navbar navbar-expand-lg  sticky-top">
+  <h4 class="titleNav" routerLink="/home">
+    Administración
+  </h4>&nbsp;
+  <span class="Version"> Version 1.0.11</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-ellipsis-h"></i>
+  </button>
+
+  <div class="collapse navbar-collapse text-xl-left" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="ul">
+        <li class="list-inline-item">
+          <button routerLink="chat" type="button" class="btn btn-light-outline sombrasBTN">
+            <i class="fa fa-commenting iconoMessage"></i> Mensajes
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button routerLink="saldo" type="button" class="btn btn-light-outline sombrasBTN">
+            <i class="fa fa-money iconoDolar"></i> Saldo Actual
+            <i>0</i>
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button [routerLink]="['/admin/product/create-product']" type="button"
+            class="btn btn-light-outline sombrasBTN">
+            <i class="fa fa-plus iconoMas"></i> Publicar producto
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button [routerLink]="['/home']" type="button" class="btn btn-light-outline sombrasBTN">
+            <i class="fa fa-search iconoSing"></i> Buscar producto
+          </button>
+        </li>
+        <!-- <li *ngIf="user" class="list-inline-item cpointerMenu">
+          <button [routerLink]="['/admin/profile']" type="button" class="btn btn-light-outline sombrasBTN">
+            <i class="fa fa-user"></i> {{user.first_name || 'Sin Nombre'}} {{user.first_surname || ''}}
+            <div class="spinner-grow spinner-grow-sm text-success" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </button>
+        </li> -->
+        <li class="list-inline-item">
+          <div class="dropdown">
+            <button class="btn btn-light-outline sombrasBTN dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img id="blah" [src]="imgUrl" alt="your image" class="imgPerfil"> {{user.first_name || 'Sin nombre'}}
+              {{user.first_surname || ''}}
+              <div class="spinner-grow spinner-grow-sm text-success" role="status">
+              </div>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a [routerLink]="['/home']" class="dropdown-item">Inicio</a>
+              <a (click)="logout()" class="dropdown-item">Cerrar
+                Sesíon</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+</nav>
+
+<div class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div [ngClass]="toggleMenu ? 'toggleFalse' : 'toggletrue'" class="bg-light border-right sidebar-wrapper">
+
+    <div class="list-group list-group-flush">
+      <a (click)="toggleMenu = !toggleMenu"
+        class="list-group-item list-group-item-action bg-primary text-white text-center">
+        <p><img src="../../../../assets/img/pageAdmin/menu.png" class="imageMenuborderRadius Menu"></p>
+        <label class="textoMenu"> Menu</label>
+      </a>
+      <a class="list-group-item list-group-item-action bg-light text-center" routerLink="profile" matTooltip="Perfil"
+        matTooltipPosition="right">
+        <p><img id="blah" [src]="imgUrl" alt="your image" class="imageMenuborderRadius"></p>
+        <label class="textoMenu"> Perfil</label>
+      </a>
+      <a class="list-group-item list-group-item-action bg-light text-center" routerLink="chat" matTooltip="Chat"
+        matTooltipPosition="right">
+        <p><img src="../../../../assets/img/pageAdmin/charlar.png" class="imageMenu"></p>
+        <label class="textoMenu"> Chat</label>
+      </a>
+      <a class="list-group-item list-group-item-action bg-light text-center " routerLink="favorite"
+        matTooltip="Favoritos" matTooltipPosition="right">
+        <p><img src="../../../../assets/img/pageAdmin/favoritos.png" class="imageMenu"></p>
+        <label class="textoMenu"> Favoritos</label>
+      </a>
+      <a class="list-group-item list-group-item-action bg-light text-center" routerLink="saldo" matTooltip="Saldos"
+        matTooltipPosition="right">
+        <p> <img src="../../../../assets/img/pageAdmin/cartera.png" class="imageMenu"></p>
+        <label class="textoMenu"> Saldos</label>
+      </a>
+      <a class="list-group-item list-group-item-action bg-light text-center"
+        [routerLink]="['/admin/product/list-products']" matTooltip="Productos" matTooltipPosition="right">
+        <p> <img src="../../../../assets/img/pageAdmin/tarea-completada.png" class="imageMenu"></p>
+        <label class="textoMenu"> Productos</label>
+      </a>
+      <a class="list-group-item list-group-item-action bg-light text-center"
+        [routerLink]="['/admin/configuration/category']" matTooltip="Configuración" matTooltipPosition="right">
+        <p> <img src="../../../../assets/img/pageAdmin/configuration.png" class="imageMenu"></p>
+        <label class="textoMenu"> Configuración</label>
+      </a>
+      <a class="list-group-item list-group-item-action bg-light text-center" routerLink="users" matTooltip="Usuarios"
+        matTooltipPosition="right">
+        <p> <img src="../../../../assets/img/pageAdmin/equipo.png" class="imageMenu"></p>
+        <label class="textoMenu"> Usuarios</label>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

@@ -1,0 +1,314 @@
+<!--menu-->
+<div>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <h4 class="titleNav">
+      <span [routerLink]="['/home']">
+        {{'aprysa.com' | uppercase}}</span>
+    </h4>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-ellipsis-h"></i>
+    </button>
+
+    <div class="collapse navbar-collapse text-xl-left" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="ul">
+          <li *ngIf="user" class="list-inline-item">
+            <button [routerLink]="['/admin/chat']" type="button" class="btn btn-light-outline sombrasBTN">
+              <i class="fa fa-commenting iconoMessage"></i> Mensajes
+            </button>
+          </li>
+          <li *ngIf="user" class="list-inline-item">
+            <button [routerLink]="['/admin/saldo']" type="button" class="btn btn-light-outline sombrasBTN">
+              <i class="fa fa-money iconoDolar"></i> Saldo Actual
+              <i>0</i>
+            </button>
+          </li>
+          <li *ngIf="user" class="list-inline-item">
+            <button [routerLink]="['/admin/product']" type="button" class="btn btn-light-outline sombrasBTN">
+              <i class="fa fa-plus iconoMas"></i> Publicar producto
+            </button>
+          </li>
+          <!-- <li class="list-inline-item cpointerMenu" data-toggle="modal" data-target=".modalLocalizacion">
+            <button type="button" class="btn btn-light-outline sombrasBTN">
+              <i class="fa fa-location-arrow iconoLocalizacion"></i> Localización
+              <i class="fa fa-angle-down"></i>
+            </button>
+          </li> -->
+          <li *ngIf="!user" class="list-inline-item cpointerMenu">
+            <button [routerLink]="['/login']" type="button" class="btn btn-light-outline sombrasBTN">
+              <i class="fa fa-sign-in iconoSing"></i> Inicia sesión o registrate
+            </button>
+          </li>
+          <li *ngIf="user" class="list-inline-item cpointerMenu">
+            <div class="dropdown">
+              <button class="btn btn-light-outline sombrasBTN dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user"></i> {{user.first_name || 'Sin nombre'}} {{user.first_surname}}
+                <div class="spinner-grow spinner-grow-sm text-success" role="status">
+                </div>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a [routerLink]="['/admin']" class="dropdown-item">Administración</a>
+                <a (click)="logout()" class="dropdown-item">Cerrar
+                  Sesíon</a>
+              </div>
+            </div>
+            <!-- <button [routerLink]="['/admin']" type="button" class="btn btn-light-outline sombrasBTN">
+              <i class="fa fa-user"></i> {{user.first_name}} {{user.first_surname}}
+              <div class="spinner-grow spinner-grow-sm text-success" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </button> -->
+          </li>
+        </ul>
+      </form>
+    </div>
+  </nav>
+  <!-- modal Localizacion-->
+  <div class="modal fade modalLocalizacion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <i class="fa fa-location-arrow iconoLocalizacion"></i>
+            Localización
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <ul class="list-group text-center">
+              <li class="list-group-item cpointer">Colombia</li>
+              <li class="list-group-item cpointer">Venezuela</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light-outline btnModal" data-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final modal Localización-->
+  <!-- carousel -->
+  <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="2000">
+        <img src="../../../../assets/img/imgCarousel/A.png" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="titleCarousel">Comprar con nosotros es muy fácil</h2>
+        </div>
+      </div>
+      <div class="carousel-item" data-interval="2000">
+        <img src="../../../../assets/img/imgCarousel/B.jpg" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="titleCarousel">Comprar con nosotros es muy fácil</h2>
+        </div>
+      </div>
+      <div class="carousel-item" data-interval="2000">
+        <img src="../../../../assets/img/imgCarousel/C.jpg" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="titleCarousel">Comprar con nosotros es muy fácil</h2>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- caraacteristicas -->
+  <div class="main-crr">
+    <owl-carousel [options]="{items: 6, dots: true, navigation: true, 
+      responsive: {
+                    '0': { items: 1, nav:true},
+                  '300': { items: 1, nav:true},
+                  '400': { items: 2, nav:true},
+                  '600': { items: 3, nav:false},
+                  '700': { items: 3, nav:false},
+                  '800': { items: 3, nav:false},
+                 '1000': { items: 4, nav:false},
+                 '1200': { items: 5, nav:false},
+                 '1300': { items: 6, nav:false},
+                 '1450': { items: 7, nav:false}
+                }
+              }" [items]="categories" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <div data-toggle="tooltip" data-placement="top" title="{{category.name}}" class="item"
+        *ngFor="let category of categories">
+        <div class="itemimg">
+          <img class="icon" src="../../../../../assets/img/imgProductos/coche.png">
+          <p class="text-center">{{category.name}}</p>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+
+  <!-- Title productos -->
+  <div class="container ProductosHeard">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="titleBlue"> Productos </h3>
+        <div class="inputBuscar">
+          <mat-form-field appearance="outline">
+            <mat-label>Buscar</mat-label>
+            <input matInput placeholder="Buscar">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Lista de  Productos -->
+  <div class="container main">
+    <div class="cards-productos">
+      <div *ngFor="let product of products" class="item-card">
+        <div class="img-card" (click)="CaputrarIDProduct(product.id)" data-toggle="modal"
+          data-target=".bd-example-modal-xl">
+          <img
+            [src]="(product.image1 === nullImage) || (product.image1 === null) ? imgDefault : urlImgs+product.image1" />
+        </div>
+        <h5 class="cd-title-card">{{product.name}}</h5>
+        <div class="content-card">
+
+          <p class="cd-pecio-card">
+            {{ product.price | currency: "COP":"symbol-narrow" }}
+          </p>&nbsp;
+          <h4 class="cd-icono-card">
+            <i class="fa fa-heart iconoCorazon"></i>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center main">
+    <h5 class="textVerMas"> Ver más </h5>
+  </div>
+  <div class="main publicidad">
+
+  </div>
+  <!-- productos destacados -->
+  <div class="container main">
+    <app-product-best-seller></app-product-best-seller>
+  </div>
+  <!--Subfooter-->
+  <div class="subFooter">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h5 class="text-dark">{{'Aprysa.com' | uppercase}}</h5>
+        <h3 class="titleBlue">
+          Vender con nosotros es muy fácil
+        </h3>
+      </div>
+    </div><br><br>
+    <div class="row">
+      <div class="col-md-4 text-center moverIcono">
+        <h3><i class="fa fa-inbox iconoBandera"></i></h3>
+        <h5 class="text-dark">Encuentra el producto perfecto</h5>
+        <p class="text-muted">
+          Nuestra aplicación encontro lo que necesitabas.
+        </p>
+      </div>
+      <div class="col-md-4 text-center moverIcono">
+        <h3><i class="fa fa-shield iconoBandera"></i></h3>
+        <h5 class="text-dark">Publica con confianza</h5>
+        <p class="text-muted">
+          Su producto estara seguro, no compartiremos tu información.
+        </p>
+      </div>
+      <div class="col-md-4 text-center moverIcono">
+        <h3><i class="fa fa-smile-o iconoBandera"></i></h3>
+        <h5 class="text-dark">Disfruta tu producto</h5>
+        <p class="text-muted">
+          Su producto, un producto adecuado, se encontraba con nosotros.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="">
+      <div class="row footer-content">
+        <div class="col-md-4 footerColum">
+          <h4 class="text-center">{{'aprysa.com' | uppercase}}</h4>
+          <p class="text-center">
+            © 2019 Your company. All rights reserved
+          </p>
+        </div>
+        <div class="col-md-4 footerColum">
+          <h4 class="text-center">{{ "aprysa.com" | uppercase }}</h4>
+          <p class="text-center">
+            Quienes somos?
+          </p>
+          <p class="text-center">
+            Quienes somos?
+          </p>
+          <p class="text-center">
+            Quienes somos?
+          </p>
+        </div>
+        <div class="col-md-4 footerColum">
+          <h4 class="text-center">{{ "Redes" | uppercase }}</h4>
+          <p class="text-center">
+            <div class="social-buttons">
+              <a href="https://es-la.facebook.com/" target="_blank"
+                class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
+                <span class="social-button__inner">
+                  <i class="fa fa-facebook-f"></i>
+                </span>
+              </a>
+              <a href="https://www.instagram.com/?hl=es-la" target="_blank"
+                class="social-buttons__button social-button social-button--instagram" aria-label="instagram">
+                <span class="social-button__inner">
+                  <i class="fa fa-instagram"></i>
+                </span>
+              </a>
+              <a href="https://twitter.com/?lang=es" target="_blank"
+                class="social-buttons__button social-button social-button--twitter" aria-label="twitter">
+                <span class="social-button__inner">
+                  <i class="fa fa-twitter"></i>
+                </span>
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title titleModalProduct" id="exampleModalLabel">Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-page-product [idProduct]="idProduct"></app-page-product>
+      </div>
+    </div>
+  </div>
+</div>

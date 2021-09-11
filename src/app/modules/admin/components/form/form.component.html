@@ -1,0 +1,32 @@
+<div class="form-header">
+  <span class="form-title">{{title || 'Formulario'}}</span>
+</div>
+<form class="form-content" [formGroup]="form">
+  <div class="form-item" *ngFor="let control of config.controls | keyvalue">
+    <span class="form-title-campo">
+      <i class="fa fa-{{control.value?.icon || 'bullseye'}}"></i> {{control.value?.title || ''}}
+    </span>
+    <select *ngIf="isType(control.value, 'select')" [formControlName]="control.key">
+      <option *ngFor="let option of control.value?.controlOptions?.options || []" [value]="option.value">
+        {{option.text}}
+      </option>
+    </select>
+    <input *ngIf="isType(control.value, 'input')" [type]="control.value?.controlOptions?.type || 'text'"
+      [placeholder]="control.value?.placeholder || ''" [formControlName]="control.key" />
+  </div>
+  <div class="form-item">
+    <button *ngFor="let action of actions || []" class="btn btn-{{action.color || ''}}  sombrasBTN"
+      (click)="actionExec(action)">
+      <i class="fa fa-{{action?.icon || 'bullseye'}}"></i> {{action.title || ''}}
+    </button>
+  </div>
+</form>
+
+<!-- <div class="inputBuscar">
+  <mat-form-field appearance="outline">
+    <mat-label>Buscar</mat-label>
+    <input matInput *ngIf="isType(control.value, 'input')" [type]="control.value?.controlOptions?.type || 'text'"
+      [placeholder]="control.value?.placeholder || ''" [formControlName]="control.key" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div> -->

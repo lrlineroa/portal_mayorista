@@ -1,0 +1,30 @@
+<!-- Title productos -->
+<div class="container ProductosHeard">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="titleBlue">Productos destacados</h3>
+    </div>
+  </div>
+</div>
+<!--Lista de  Productos -->
+<div class="container main">
+  <div class="cards-productos">
+    <div *ngFor="let item of products" class="item-card">
+      <div class="img-card">
+        <img onmouseout="this.src='../../../../assets/img/imgProductsPrueba/D1.jpg'"
+          onmouseover="this.src='../../../../assets/img/imgProductsPrueba/D2.jpg'"
+          src="../../../../assets/img/imgProductsPrueba/D1.jpg" alt="..." />
+      </div>
+      <h5 class="cd-title-card">{{item.name}}</h5>
+      <div class="content-card">
+
+        <p class="cd-pecio-card">
+          {{ item.money | currency: "COP":"symbol-narrow" }}
+        </p>&nbsp;
+        <h4 class="cd-icono-card">
+          <i class="fa fa-heart iconoCorazon"></i>
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

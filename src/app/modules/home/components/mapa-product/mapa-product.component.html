@@ -1,0 +1,16 @@
+<div class="map">
+  <div class="card-body">
+    <h5 class="card-title titleNav"><span class="text-muted">Ubicación del producto</span></h5>
+    <!-- <button (click)="GetLocation()" class="btn btn-success btn-sm">Campturar mi ubicación</button><br> -->
+    <hr>
+    <mat-card-content>
+      <agm-map [latitude]="_lat" [longitude]="_lng" [zoom]="17">
+        <agm-marker [iconUrl]="'../../../../assets/img/img_LocationMAp/1.png'" [latitude]="_lat" [longitude]="_lng">
+          <agm-info-window [disableAutoPan]="true">
+            <span class="text-primary">{{_name}}</span>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </mat-card-content>
+  </div>
+</div>

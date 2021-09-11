@@ -1,0 +1,188 @@
+<div class="modal-product">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="7"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="8"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="9"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="3000">
+        <img [src]="(product.image1 === nullImage) || (product.image1 === null) ? imgDefault : urlImgs+product.image1"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image2 === nullImage) || (product.image2 === null) ? imgDefault : urlImgs+product.image2"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image3 === nullImage) || (product.image3 === null) ? imgDefault : urlImgs+product.image3"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image4 === nullImage) || (product.image4 === null) ? imgDefault : urlImgs+product.image4"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image5 === nullImage) || (product.image5 === null) ? imgDefault : urlImgs+product.image5"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image6 === nullImage) || (product.image6 === null) ? imgDefault : urlImgs+product.image6"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image7 === nullImage) || (product.image7 === null) ? imgDefault : urlImgs+product.image7"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image8 === nullImage) || (product.image8 === null) ? imgDefault : urlImgs+product.image8"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img [src]="(product.image9 === nullImage) || (product.image9 === null) ? imgDefault : urlImgs+product.image9"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img
+          [src]="(product.image10 === nullImage) || (product.image10 === null) ? imgDefault : urlImgs+product.image10"
+          class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="details-product">
+    <h1 class="titleProduct">{{product.name}}</h1>
+    <p class="price">{{ product.price | currency: "COP":"symbol-narrow" }}</p>
+    <p class="text-muted">{{product.description}}</p>
+    <p *ngIf="product.product_feactures.length > 0">Caracteristicas</p>
+    <div *ngFor="let caracteristicas of product.product_feactures">
+      <div>
+        <span> {{caracteristicas.key}}: {{caracteristicas.value}}</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="details-product">
+
+  </div>
+</div>
+
+
+<!-- //Comentarios -->
+<mat-tab-group>
+  <mat-tab label="Comentarios y calificaciones">
+    <div class="comentarios">
+      <div class="media position-relative">
+        <img src="../../../../../assets/img/imgUserChats/A.jpg" class="mr-3 imgComent" alt="...">
+        <div class="media-body">
+          <h5 class="mt-0">Maicol<form>
+              <p class="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5">
+                <!--
+                            --><label for="radio1">★</label>
+                <!--
+                            --><input id="radio2" type="radio" name="estrellas" value="4">
+                <!--
+                            --><label for="radio2">★</label>
+                <!--
+                            --><input id="radio3" type="radio" name="estrellas" value="3">
+                <!--
+                            --><label for="radio3">★</label>
+                <!--
+                            --><input id="radio4" type="radio" name="estrellas" value="2">
+                <!--
+                            --><label for="radio4">★</label>
+                <!--
+                            --><input id="radio5" type="radio" name="estrellas" value="1">
+                <!--
+                            --><label for="radio5">★</label>
+              </p>
+            </form>
+          </h5>
+          <p>Este producto me gusto mucho por favor comunicarse, vale la pena ya quie lo he disfrutado mucho.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="media position-relative">
+        <img src="../../../../../assets/img/imgUserChats/B.jpeg" class="mr-3 imgComent" alt="...">
+        <div class="media-body">
+          <h5 class="mt-0">John Jairo<form>
+              <p class="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5">
+                <!--
+                                --><label for="radio1">★</label>
+                <!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4">
+                <!--
+                                --><label for="radio2">★</label>
+                <!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3">
+                <!--
+                                --><label for="radio3">★</label>
+                <!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2">
+                <!--
+                                --><label for="radio4">★</label>
+                <!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1">
+                <!--
+                                --><label for="radio5">★</label>
+              </p>
+            </form>
+          </h5>
+          <p>Este producto me gusto mucho por favor comunicarse, vale la pena ya quie lo he disfrutado mucho.Este
+            producto
+            me gusto mucho por favor comunicarse, vale la pena ya quie lo he disfrutado mucho.</p>
+        </div>
+      </div>
+      <hr>
+
+      <div class="media position-relative">
+        <img src="../../../../../assets/img/imgUserChats/C.jpg" class="mr-3 imgComent" alt="...">
+        <div class="media-body">
+          <h5 class="mt-0">Lorena <form>
+              <p class="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5">
+                <!--
+                                --><label for="radio1">★</label>
+                <!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4">
+                <!--
+                                --><label for="radio2">★</label>
+                <!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3">
+                <!--
+                                --><label for="radio3">★</label>
+                <!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2">
+                <!--
+                                --><label for="radio4">★</label>
+                <!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1">
+                <!--
+                                --><label for="radio5">★</label>
+              </p>
+            </form>
+          </h5>
+          <p>Este producto me gusto mucho por favor comunicarse, vale la pena ya quie lo he disfrutado mucho.</p>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <!-- <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab> -->
+</mat-tab-group>

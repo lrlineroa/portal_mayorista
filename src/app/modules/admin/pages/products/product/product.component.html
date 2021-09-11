@@ -1,0 +1,213 @@
+<div class="title text-center">
+  <h3 class="titleNav">Tu producto - {{product.name}}</h3>
+  <p class="text-muted">
+    Esta es la información de tu producto.
+  </p>
+</div>
+<hr>
+<form #forma="ngForm" novalidate="novalidate">
+  <p class="text-muted">
+    Acá puedes actualizar la información de tu producto.
+  </p>
+  <div class="informationProduct">
+    <div class="item-information">
+      <mat-form-field appearance="outline" class="item-producto">
+        <mat-label>Nombre</mat-label>
+        <input [(ngModel)]="product.name" name="name" matInput type="text" placeholder="Nombre" required>
+      </mat-form-field>
+    </div>
+    <div class="item-information">
+      <mat-form-field appearance="outline" class="item-producto">
+        <mat-label>Precio</mat-label>
+        <input [(ngModel)]="product.price" name="price" matInput type="number" placeholder="Precio" required>
+      </mat-form-field>
+    </div>
+    <div class="item-information">
+      <mat-form-field appearance="outline" class="item-producto">
+        <mat-label>Descripción</mat-label>
+        <textarea [(ngModel)]="product.description" name="description" matInput type="text" placeholder="Descripción"
+          required></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div *ngIf="product.product_feactures.length > 0">
+    <p class="text-muted">
+      Caracteristicas adicionales.
+    </p>
+    <div>
+      <mat-form-field *ngFor="let caracteristica of product.product_feactures" appearance="outline"
+        class="item-producto">
+        <mat-label>{{caracteristica.key || ''}}</mat-label>
+        <input [(ngModel)]="caracteristica.value" [name]="caracteristica.key" matInput type="text"
+          [placeholder]="caracteristica.key" required>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="BtnActualizar">
+    <button class="button" (click)="UpdateProduct(forma)">
+      Actualizar
+      <div class="button__horizontal"></div>
+      <div class="button__vertical"></div>
+    </button>
+  </div>
+</form>
+<hr>
+<p class="text-muted">
+  Acá puedes editar las imagenes de tu producto.
+</p>
+<div class="divImages">
+  <!-- Imagenews Update -->
+  <div class="imagenes">
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image1"
+            [src]="(product.image1 === nullImage) || (product.image1 === null) ? image1 : urlImgs+product.image1" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>&nbsp;
+            <span class="badge badge-light badge-info">1</span>
+          </p>
+          <input ngModel name="image1" type="file" class="file" accept="image/*"
+            (change)="PreViewImage1($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image2"
+            [src]="(product.image2 === nullImage) || (product.image2 === null) ? image2 : urlImgs+product.image2" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">2</span>
+          </p>
+          <input ngModel name="image2" type="file" class="file" accept="image/*"
+            (change)="PreViewImage2($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image3"
+            [src]="(product.image3 === nullImage) || (product.image3 === null) ? image3 : urlImgs+product.image3" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">3</span>
+          </p>
+          <input ngModel name="image3" type="file" class="file" accept="image/*"
+            (change)="PreViewImage3($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image4"
+            [src]="(product.image4 === nullImage) || (product.image4 === null) ? image4 : urlImgs+product.image4" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">4</span>
+          </p>
+          <input ngModel name="image4" type="file" class="file" accept="image/*"
+            (change)="PreViewImage4($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image5"
+            [src]="(product.image5 === nullImage) || (product.image5 === null) ? image5 : urlImgs+product.image5" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">5</span>
+          </p>
+          <input ngModel name="image5" type="file" class="file" accept="image/*"
+            (change)="PreViewImage5($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image6"
+            [src]="(product.image6 === nullImage) || (product.image6 === null) ? image6 : urlImgs+product.image6" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">6</span>
+          </p>
+          <input ngModel name="image6" type="file" class="file" accept="image/*"
+            (change)="PreViewImage6($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image7"
+            [src]="(product.image7 === nullImage) || (product.image7 === null) ? image7 : urlImgs+product.image7" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">7</span>
+          </p>
+          <input ngModel name="image7" type="file" class="file" accept="image/*"
+            (change)="PreViewImage7($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image8"
+            [src]="(product.image8 === nullImage) || (product.image8 === null) ? image8 : urlImgs+product.image8" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">8</span>
+          </p>
+          <input ngModel name="image8" type="file" class="file" accept="image/*"
+            (change)="PreViewImage8($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image9"
+            [src]="(product.image9 === nullImage) || (product.image9 === null) ? image9 : urlImgs+product.image9" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">9</span>
+          </p>
+          <input ngModel name="image9" type="file" class="file" accept="image/*"
+            (change)="PreViewImage9($event.target.files)" />
+        </div>
+      </div>
+    </div>
+    <div class="img-item text-center">
+      <div class="img-contenedor">
+        <div><img [src]="image10"
+            [src]="(product.image10 === nullImage) || (product.image10 === null)  ? '../../../../assets/img/imgProductos/fotografia.png' : urlImgs+product.image10" />
+        </div>
+        <div class="estilo text-center">
+          <p class="p_inputFile">Editar&nbsp;
+            <i class="fa fa-image"></i>
+            <span class="badge badge-light badge-info">10</span>
+          </p>
+          <input ngModel name="image10" type="file" class="file" accept="image/*"
+            (change)="PreViewImage10($event.target.files)" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

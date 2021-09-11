@@ -1,0 +1,95 @@
+<div class="d-flex allchat" id="wrapper">
+
+
+  <div [ngClass]="toggleMenu ? 'toggleFalse' : 'toggletrue'" class=" border-right sidebar-wrapper">
+
+    <div class="list-group list-group-flush bg-white">
+      <a (click)="toggleMenu = !toggleMenu" class="list-group-item list-group-item-action bg-white">
+        <img src=".../../../../../../../assets/img/pageAdmin/charlar.png" class="imageMenu Menu">
+        <label class="textoMenu">
+          <h3>Chats</h3>
+        </label>
+      </a>
+      <a class="list-group-item list-group-item-action  " routerLink="profile">
+        <img src=".../../../../../../../assets/img/imgUserChats/A.jpg" class="imageMenu">
+        <label class="textoMenu"> Camilo Perez</label>
+      </a>
+      <a class="list-group-item list-group-item-action " routerLink="profile">
+        <img src=".../../../../../../../assets/img/imgUserChats/B.jpeg" class="imageMenu">
+        <label class="textoMenu"> Maria ortiz</label>
+      </a>
+      <a class="list-group-item list-group-item-action " routerLink="profile">
+        <img src=".../../../../../../../assets/img/imgUserChats/C.jpg" class="imageMenu">
+        <label class="textoMenu"> Samuel Andres</label>
+      </a>
+      <a class="list-group-item list-group-item-action " routerLink="profile">
+        <img src=".../../../../../../../assets/img/imgUserChats/D.jpg" class="imageMenu">
+        <label class="textoMenu"> Jairo Echeverry</label>
+      </a>
+      <a class="list-group-item list-group-item-action " routerLink="profile">
+        <img src=".../../../../../../../assets/img/imgUserChats/E.png" class="imageMenu">
+        <label class="textoMenu"> Manuela Martinez</label>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="">
+
+    <form class="">
+      <div class="chat">
+        <div class="chat-header clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+
+          <div class="chat-about">
+            <div class="chat-with">Ronny developer</div>
+            <div class="chat-num-messages">mensajes</div>
+          </div>
+        </div>
+        <!-- end chat-header -->
+
+        <div class="chat-history">
+          <ul>
+            <li class="clearfix">
+              <div class="message-data align-right">
+                <span class="message-data-time">10:10 AM, Hoy</span> &nbsp; &nbsp;
+                <span class="message-data-name">Ronny </span> <i class="fa fa-circle me"></i>
+
+              </div>
+              <div class="message other-message float-right">
+                Hola Hugo como estas ¿Cómo va el proyecto?
+              </div>
+            </li>
+
+            <li>
+              <div class="message-data">
+                <span class="message-data-name"><i class="fa fa-circle online"></i> Hugo</span>
+                <span class="message-data-time">10:12 AM, Hoy</span>
+              </div>
+              <div class="message my-message">
+                ¿Nos reuniremos con Hoy? El proyecto ya se ha terminado y tengo resultados para mostrarle.
+              </div>
+            </li>
+
+
+          </ul>
+
+        </div>
+        <!-- end chat-history -->
+
+        <div class="chat-message clearfix">
+          <textarea [(ngModel)]="message" name="message" (keyup.enter)="EnviarMessage()" id="message-to-send"
+            placeholder="Enviar Mensaje" rows="3"></textarea>
+
+
+
+          <button (click)="EnviarMessage()">Enviar</button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

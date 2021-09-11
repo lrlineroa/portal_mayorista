@@ -1,0 +1,169 @@
+// global
+
+.sombrasBTN:hover {
+  box-shadow: 2px 2px 10px rgb(196, 192, 192),
+    -0.1px -0.1px 3px rgb(218, 215, 215);
+    color: black;
+}
+.sombrasBTN {
+  border-radius: 100px;
+    color: black;
+}
+
+// menu Nav
+.titleBlue{
+color: #4E65F8;
+  font-weight: 1000;
+}
+
+.titleNav {
+color: #4E65F8;;
+font-weight: 1000;
+}
+
+.Version{
+  font-weight: 100;
+  font-size: 11px;
+}
+
+nav:hover .titleNav {
+  color: #4E65F8
+}
+
+nav {
+  background-color: rgb(245, 244, 244);
+  color: #4E65F8;
+  
+  box-shadow: 2px 2px 10px rgb(216, 213, 213);
+  opacity: 2;
+}
+
+
+.iconoSing {
+  color: rgb(93, 169, 255);
+}
+
+
+//  Sidevar
+.sidebar-wrapper {
+  min-height: 80vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+.sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+.sidebar-wrapper .list-group {
+  width: 10rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+.sidebar-wrapper {
+    margin-left: 0;
+}
+
+#wrapper.toggled .sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (max-width: 1000px) {
+ 
+  .sidebar-wrapper .list-group {
+  width: 5rem;
+  
+  }
+  .textoMenu {
+    display: none;
+  }
+
+}
+
+.toggletrue {
+  .Menu {
+  transition: 0.5s;
+  transform: rotate(360deg);
+  }
+  
+}
+
+.toggleFalse {
+  .textoMenu {
+    display: none;
+  }
+  .list-group {
+  width: 5rem;
+  opacity: 0.9;
+  transition: 0.5s;
+  }
+  .Menu {
+  opacity: 0.9;
+  transition: 0.5s;
+  }
+}
+
+.imgPerfil {
+  width: 35px; 
+  border-radius: 100%;
+  height: 35px; 
+}
+
+
+.ul {
+  margin-bottom: 0%;
+}
+
+.imageMenu {
+  width: 35px;
+  height: 35px;
+  border-radius: 10%;
+}
+.imageMenuborderRadius {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+
+
+// Iconos
+.iconoDolar {
+  color: green;
+}
+.iconoLocalizacion {
+  color: rgb(93, 169, 255);
+}
+
+.iconoMas {
+  color: rgb(255, 156, 74);
+}
+.iconoMessage {
+  color: rgb(49, 132, 228);
+}
+
+
+.adminRouter
+{
+  background-color: rgb(250, 250, 250)
+}
+
+p {
+  margin: 0%;
+  padding: 0%
+}
+
+label {
+  margin: 0%;
+  padding: 0%
+}
+
+.dropdown-item{
+  cursor: pointer;
+}
