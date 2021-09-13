@@ -11,13 +11,14 @@ import { AdminModule } from './modules/admin/admin.module';
 import { MaterialModule } from './shared/materialAngular/material';
 import { OwlModule } from 'ngx-owl-carousel';
 import { SharedModule } from './shared/shared.module';
+import { PageLogindevComponent } from './modules/page-logindev/page-logindev.component';
 
 // Notificaciones
 // material
 // Servicios
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PageLogindevComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
