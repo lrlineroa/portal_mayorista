@@ -1,13 +1,18 @@
+
+
 //login
 .Body  {
-  background: #1c92d2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #f2fcfe, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #ffffff, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #b3babe;  /* fallback for old browsers */
+  background-color:rgb(242, 242, 242);
+
 }
 
+.container__login{
+  padding: 1%;
+}
 // menu Nav
 .titleBlue{
-color: #4E65F8;
+
   font-weight: 1000;
 }
 
@@ -20,10 +25,30 @@ font-weight: 1000;
 }
 
 nav:hover .titleNav {
-  color: #4E65F8
+
 }
 
+//fuente texto "Olvide COntraseña"
 
+.color__fuente{
+
+  color: rgb(255,66,6);
+}
+.color__fuente__ayuda{
+  
+  padding-left: 45px;
+  
+  color: rgb(122, 123, 131);
+  
+}
+.alinear__fuente__ayuda {
+display: inline;
+padding: 15px;
+ }
+//Botones
+.class__botton{
+  background-color: rgb(252, 66, 6);
+}
 
 
 nav {
@@ -50,7 +75,7 @@ nav:hover button {
 .titulo {
   margin-top: 30px;
   margin-bottom: 30px;
-  color: #ffffff
+  color:grey
 }
 
 // boton
@@ -71,18 +96,33 @@ ul {
   padding: 0px;
 }
 
+
+
 .form-container {
   border-radius: 10px;
-  padding: 30px;
-  box-shadow: 2px 2px 15px rgb(89, 169, 248), -0.1px -0.1px 10px rgb(61, 123, 255);
-  background: #56CCF2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 34px;
+  background: white;
   color: white;
   margin-right: 8px;
   margin-left: 8px;
 
 
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: rgb(242, 242, 242);
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 40px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .iconoUser {
@@ -96,11 +136,29 @@ ul {
 }
 
 // iconos
+.caja__iconos{
+  display: inline;
+  width: 100%;
+  height: 100%;
+  padding-right: 30%;
+}
+.centro{
+  display: inline-flex;
+ 
+}
+
+.borde__icono{
+  border-style: solid;
+  padding: 23px;
+  border-color: rgb(242,242,242); 
+}
+
 .iconoFacebook {
   color: #4267b1;
   padding: 25px;
   border-radius: 10px;
-  background-color: #f2fcfe;
+  background-color: white;
+  border-style: solid;
 }
 .iconoGamil {
   color: #db493c;
