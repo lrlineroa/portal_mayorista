@@ -1,18 +1,14 @@
-
-
 //login
-.Body  {
-  background: #b3babe;  /* fallback for old browsers */
-  background-color:rgb(242, 242, 242);
-
+.Body {
+  background: #b3babe; /* fallback for old browsers */
+  background-color: rgb(242, 242, 242);
 }
 
-.container__login{
+.container__login {
   padding: 1%;
 }
 // menu Nav
-.titleBlue{
-
+.titleBlue {
   font-weight: 1000;
 }
 
@@ -20,40 +16,35 @@
 //   border-color: #4E65F8
 // }
 .titleNav {
-color:white;
-font-weight: 1000;
+  color: white;
+  font-weight: 1000;
 }
 
 nav:hover .titleNav {
-
 }
 
 //fuente texto "Olvide COntraseña"
 
-.color__fuente{
-
-  color: rgb(255,66,6);
+.color__fuente {
+  color: rgb(255, 66, 6);
 }
-.color__fuente__ayuda{
-  
+.color__fuente__ayuda {
   padding-left: 45px;
-  
+
   color: rgb(122, 123, 131);
-  
 }
 .alinear__fuente__ayuda {
-display: inline;
-padding: 15px;
- }
+  display: inline;
+  padding: 15px;
+}
 //Botones
-.class__botton{
+.class__botton {
   background-color: rgb(252, 66, 6);
 }
 
-
 nav {
   font-weight: 1000;
-  background-color: rgba(0 , 0, 0, 0.199 );
+  background-color: rgba(0, 0, 0, 0.199);
   padding-top: 20px;
   padding-bottom: 20px;
   opacity: 0.9;
@@ -66,7 +57,7 @@ nav:hover {
   opacity: 2;
 }
 nav:hover button {
-   background-color: rgb(241, 238, 238);
+  background-color: rgb(241, 238, 238);
   color: black;
   box-shadow: 2px 2px 10px rgb(216, 213, 213);
 }
@@ -75,28 +66,24 @@ nav:hover button {
 .titulo {
   margin-top: 30px;
   margin-bottom: 30px;
-  color:grey
+  color: grey;
 }
 
 // boton
 .sombrasBTN:hover {
   box-shadow: 2px 2px 15px rgb(255, 255, 255),
     -0.1px -0.1px 3px rgb(255, 255, 255);
-  color: white
+  color: white;
 }
 .sombrasBTN {
   border-radius: 100px;
-  color: white
+  color: white;
 }
-
-
 
 ul {
   margin: 0px;
   padding: 0px;
 }
-
-
 
 .form-container {
   border-radius: 10px;
@@ -105,8 +92,6 @@ ul {
   color: white;
   margin-right: 8px;
   margin-left: 8px;
-
-
 }
 
 .form-control {
@@ -136,21 +121,22 @@ ul {
 }
 
 // iconos
-.caja__iconos{
-  display: inline;
-  width: 100%;
-  height: 100%;
-  padding-right: 30%;
+
+.caja__iconos {
+  display: flex;
+  justify-content: center;
 }
-.centro{
-  display: inline-flex;
- 
+.centro {
+  justify-content: center;
+  width: 100px;
+  margin: 10px;
+
 }
 
-.borde__icono{
+.borde__icono {
   border-style: solid;
   padding: 23px;
-  border-color: rgb(242,242,242); 
+  border-color: rgb(242, 242, 242);
 }
 
 .iconoFacebook {
@@ -160,34 +146,33 @@ ul {
   background-color: white;
   border-style: solid;
 }
-.iconoGamil {
-  color: #db493c;
-  padding: 25px;
-  background-color: #f2fcfe;
-border-radius: 10px;
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
+
+
+
 .iconoTwitter {
-  color: #5CA9DD;
+  color: #5ca9dd;
   padding: 5px;
   background-color: #f2fcfe;
   border-radius: 100px;
-} 
+}
 
-.rebote:active
-{
-	transform: translate(0px,5px);
-  -webkit-transform: translate(0px,5px);
-	border-bottom: 1px solid;
+.rebote:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  border-bottom: 1px solid;
 }
 
 .rebote {
-  transition: .4s;
+  transition: 0.4s;
 }
-
-
-
-
 
 header {
   padding-left: 30px;
@@ -215,5 +200,3 @@ header {
 .iconoMessage {
   color: rgb(93, 169, 255);
 }
-
-

@@ -21,7 +21,7 @@
       id="navbarSupportedContent"
     >
       <ul class="navbar-nav mr-auto"></ul>
-      
+
       <form class="form-inline my-2 my-lg-0">
         <button
           [routerLink]="['/login/signup']"
@@ -33,39 +33,41 @@
       </form>
     </div>
   </nav>
+  </div>
   <!--Login-->
-  <div class="container" >
-    <div class="row justify-content-center container__login" >
+  <div class="container__login">
+  <div class="container">
+    <div class="row justify-content-center">
       <form class="form-container">
         <div class="form-group">
           <div class="container titulo">
-            <div class="row">
+            <div class="column">
               <div class="col-md-12 text-center">
                 <h6>Iniciar Sesión Con</h6>
               </div>
               <div class="form-group justify-content-center">
                 <div class="caja__iconos">
-                  <h3>
-                    
+                  <div class="centro">
                     <i
-                      class=" centro
+                      class="
+                        
                         borde__icono
                         fa fa-facebook-square
                         iconoFacebook
                         rebote
                       "
-                    ></i
-                    >&nbsp;
-
+                    ></i>
+                  </div>
+                  <div class="centro">
                     <i
                       class="
                         borde__icono
-                        fa fa-google-plus-official
-                        iconoGamil
+                        fa fa-google
+                        iconoGoogle
                         rebote
                       "
                     ></i>
-                  </h3>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,7 +83,7 @@
               aria-describedby="emailHelp"
             />
           </div>
-          <div class="form-group ">
+          <div class="form-group">
             <label for="password"></label>
             <input
               [(ngModel)]="password"
@@ -91,9 +93,9 @@
             />
           </div>
         </div>
-        
+
         <span
-          class="badge  resetPassword color__fuente"
+          class="badge resetPassword color__fuente"
           (click)="recuperar = !recuperar"
           >Olvide Mi Contraseña</span
         >
@@ -124,7 +126,6 @@
           sombrasBTN">
           <i class="fa fa-undo"></i> page recuperar
         </button> -->
-      
         </div>
 
         <button
@@ -139,15 +140,15 @@
           type="button"
           class="btn btn-block btn-light-outline sombrasBTN"
         >
-          <i class="fa fa-user-plus"></i> Crear Cuenta</button
-        >
+          <i class="fa fa-user-plus"></i> Crear Cuenta
+        </button>
         <div class="color__fuente__ayuda">
-          <div class="alinear__fuente__ayuda"><a href="/">Ayuda</a> </div>
-          <div class="alinear__fuente__ayuda"><a href="/">Privacidad y Condiciones</a></div>
+          <div class="alinear__fuente__ayuda"><a href="/">Ayuda</a></div>
+          <div class="alinear__fuente__ayuda">
+            <a href="/">Privacidad y Condiciones</a>
+          </div>
         </div>
-
       </form>
-    
     </div>
   </div>
 </div>
