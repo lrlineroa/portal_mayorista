@@ -33,24 +33,25 @@
       </form>
     </div>
   </nav>
-  </div>
-  <!--Login-->
-  <div class="container__login">
+</div>
+<!--Login-->
+<div class="container__login">
   <div class="container">
-    <div class="row justify-content-center ">
+    <div class="row justify-content-center">
       <form class="form-container container__fondo titulo">
         <div class="form-group">
-          <div class="container ">
+          <div class="container">
             <div class="column">
-              <div class="col-md-12 text-center ">
+              <div class="col-md-12 text-center">
                 <h6 class="color__titulo">Iniciar Sesión Con</h6>
               </div>
-              <div class="form-group justify-content-center container__elementos">
+              <div
+                class="form-group justify-content-center container__elementos"
+              >
                 <div class="caja__iconos">
                   <div class="centro">
                     <i
                       class="
-                        
                         borde__icono
                         fa fa-facebook-square
                         iconoFacebook
@@ -58,15 +59,8 @@
                       "
                     ></i>
                   </div>
-                  <div class="centro">
-                    <i
-                      class="
-                        borde__icono
-                        fa fa-google
-                        iconoGoogle
-                        rebote
-                      "
-                    ></i>
+                  <div class="centro borde">
+                    <i class="borde__icono fa fa-google iconoGoogle rebote"></i>
                   </div>
                 </div>
               </div>
@@ -93,12 +87,19 @@
             />
           </div>
         </div>
-
-        <span
-          class="badge resetPassword color__fuente"
-          (click)="recuperar = !recuperar"
-          >Olvide Mi Contraseña</span
-        >
+        <div class="resetPassword" >
+          <span
+            class="badge "
+            (click)="recuperar = !recuperar"
+            >Olvide Mi Contraseña</span
+          >
+          <div>
+            <span
+            class="badge  "
+            (click)="recuperar = !recuperar"
+            >Recordarme</span>
+          </div>
+        </div>
         <div class="form-group" *ngIf="recuperar">
           <br />
           <label for="recoverPass">Correo del usuario</label>
@@ -106,6 +107,7 @@
             [(ngModel)]="correoReset"
             type="email"
             class="form-control"
+            color__fuente
             name="correoReset"
             id="correoReset"
             aria-describedby="emailHelp"
@@ -138,7 +140,7 @@
         <button
           [routerLink]="['/login/signup']"
           type="button"
-          class="btn btn-block btn-light-outline sombrasBTN"
+          class="btn btn-block btn-light-outline sombrasBTN class__botton"
         >
           <i class="fa fa-user-plus"></i> Crear Cuenta
         </button>
