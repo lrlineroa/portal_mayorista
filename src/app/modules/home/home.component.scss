@@ -1,3 +1,4 @@
+$appOrangeColor: #FE613A;
 .home {
 
 }
@@ -5,8 +6,44 @@
 .header{
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  background-color: #EDEDED
+  background-color: #f2f2f2;
+  .navbar{
+    padding:0;
+    display: flex;
+    .brand{
+      flex:1;
+      display: flex;
+      background-color: rebeccapurple;
+      justify-content: center;
+    }
+    .searchbar-wrapper{
+      flex:2;
+      display: flex;
+      justify-content: center;
+      .searchbar{
+        flex:1;
+        display: flex;
+        border: 1px solid $appOrangeColor;
+        margin:10px;
+        border-radius: 100px;
+        background-color: white;
+        .input{
+          padding:6px;
+          margin:0;
+          flex:1;
+          border-width: 0;
+          align-self: stretch;
+          border-radius: 100px;
+        }
+      }
+    }
+    .login-content{
+      flex:1;
+      display: flex;
+      background-color: blue;
+      justify-content: center;
+    }
+  }
 }
 
 .content-login {

@@ -1,7 +1,19 @@
 <div class="home">
 
   <div class="header">
-    <div class="content-login">
+    <div class="navbar">
+      <div class="brand">
+        Portal Mayorista
+      </div>
+      <div class="searchbar-wrapper">
+        <div class="searchbar">
+          <input class="input"
+          />
+        </div>
+      </div>
+      <div class="login-content">Login</div>
+    </div>
+    <!-- <div class="content-login">
       <span class="item-menu">Sobre nosotros |</span>&nbsp;
       <span [routerLink]="[ '/login']" class="item-menu">Ingresa |</span>&nbsp;
       <span [routerLink]="[ '/login/signup']" class="item-menu">Regístrate</span>
@@ -32,7 +44,7 @@
         <img class="icono-Menu" src="../../../assets/img/imgClientes/Iconocupon.png">
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="body-header">
     <div class="content-banner" *ngIf="router.url !== '/home/search-product'">
