@@ -12,34 +12,6 @@ export class SearchProductComponent implements OnInit {
   showSpinner = false;
 
   public products: any[] = [
-    // { name: 'producto1', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto2', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto3', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto4', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto5', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto6', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto7', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto8', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto9', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto10', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto11', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto12', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto13', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto14', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto15', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto16', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto17', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto18', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto19', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto20', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto21', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto22', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto23', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto24', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto25', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto26', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto27', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
-    // { name: 'producto28', image1: '../../../../../assets/img/img_Default/default1.png', price: '120000' },
   ];
   public user: any;
   public nullImage = "null";
@@ -61,6 +33,7 @@ export class SearchProductComponent implements OnInit {
     this.ngOnInit();
     console.log("advanced: " + this._advanced);
   };
+
   @Input()
   set location(value) {
     this._location = value;
@@ -92,6 +65,7 @@ export class SearchProductComponent implements OnInit {
     console.log("minimum: " + this._minimum);
   };
 
+  @Input() categories: any[];
   // /rest/products ? location = ${ this._location }& published=${ this._published }& advanced=${ this._advanced }& maximum=${ this.maximum }& user_id=${ this.user.id }& minimum=${ this._minimum }& categoryFather=${ this._maximum }
 
   async ngOnInit() {
@@ -103,9 +77,8 @@ export class SearchProductComponent implements OnInit {
     this.showSpinner = true
     await this.rest.get(`/rest/products?advanced=${this._advanced}&categoryFather=${this._categoryFather}`).then((productsdata) => {
       console.log(productsdata);
-      console.log('1');
-      this.products = productsdata.data.data
-      console.log('2');
+      this.products = productsdata.data.data.data
+      console.log(this.products);
     });
     this.showSpinner = false
   }

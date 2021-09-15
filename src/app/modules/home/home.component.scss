@@ -13,7 +13,6 @@ $appOrangeColor: #FE613A;
     .brand{
       flex:1;
       display: flex;
-      background-color: rebeccapurple;
       justify-content: center;
     }
     .searchbar-wrapper{
@@ -27,21 +26,61 @@ $appOrangeColor: #FE613A;
         margin:10px;
         border-radius: 100px;
         background-color: white;
+        align-items: center;
         .input{
-          padding:6px;
+          padding:10px;
           margin:0;
           flex:1;
           border-width: 0;
           align-self: stretch;
           border-radius: 100px;
         }
+        .input:focus{
+          outline: none;
+        }
+        .left-icon{
+          width: 27px;
+          height: 27px;
+          margin-left: 15px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        .left-icon:hover{
+          cursor: pointer;
+        }
+        .right-icon-wrapper{
+          display:flex;
+          justify-content: center;
+          align-items:center;
+          width: 38px;
+          height: 38px;
+          margin-right: 9px;
+          background: rgb(255,54,5);
+          background: linear-gradient(270deg, rgba(255,54,5,1) 0%, rgba(255,51,48,1) 100%);
+          border-radius: 100px;
+        }
+        .right-icon-wrapper:hover{
+          cursor: pointer;
+          background-color:#333333;
+        }
       }
     }
     .login-content{
       flex:1;
       display: flex;
-      background-color: blue;
       justify-content: center;
+    }
+
+  }
+  .dropdown-categories-wrapper{
+    display: flex;
+    .foo{
+      flex:1 
+    }
+    .wrapper{
+      flex:2;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

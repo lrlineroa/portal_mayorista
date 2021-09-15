@@ -7,44 +7,33 @@
       </div>
       <div class="searchbar-wrapper">
         <div class="searchbar">
-          <input class="input"
-          />
+          <div matSuffix (click)="BusquedaAvanzada(buscarTexto.value)">
+            <img alt="search" class='left-icon' src="../../../assets/img/imgSearch/u58.png">
+          </div>
+          <input class="input" placeholder="Busca un producto" />
+          <div class="right-icon-wrapper" matSuffix (click)="toggleDropdown()">
+            <img alt="categories" src="../../../assets/img/imgSearch/u67.png" />
+          </div>
         </div>
       </div>
-      <div class="login-content">Login</div>
-    </div>
-    <!-- <div class="content-login">
-      <span class="item-menu">Sobre nosotros |</span>&nbsp;
-      <span [routerLink]="[ '/login']" class="item-menu">Ingresa |</span>&nbsp;
-      <span [routerLink]="[ '/login/signup']" class="item-menu">Regístrate</span>
-    </div>
-    <div class="content-logo">
-      <div [routerLink]="['/home']" class="item-logo">
-        <img class="img-logo" src="../../../assets/img/imgClientes/logo1.png">
-      </div>
-      <div class="item-search">
-        <mat-form-field appearance="outline">
-          <mat-label>Busqueda avanzada</mat-label>
-          <input matInput placeholder="Busqueda avanzada" (keyup.enter)="BusquedaAvanzada(buscarTexto.value)"
-            #buscarTexto>
-          <mat-icon matSuffix (click)="BusquedaAvanzada(buscarTexto.value)"><img class="img-lupa"
-              src="../../../assets/img/imgClientes/Ilupa.png"></mat-icon>
-        </mat-form-field>
-      </div>
-      <div class="item-icons">
-        <img class="icono-Menuizquierda" src="../../../assets/img/imgClientes/IListaCo.png">
+      <div class="login-content">
+        <div class="content-login">
+          <span class="item-menu">Sobre nosotros |</span>&nbsp;
+          <span [routerLink]="[ '/login']" class="item-menu">Ingresa |</span>&nbsp;
+          <span [routerLink]="[ '/login/signup']" class="item-menu">Regístrate</span>
+        </div>
       </div>
     </div>
-    <div class="content-iconos">
-      <div class="item-menu-icons">
-        <img class="icono-Menu" src="../../../assets/img/imgClientes/IconoLista.png">&nbsp;
-        <img [routerLink]="['/admin/product/create-product']" class="icono-Menu"
-          src="../../../assets/img/imgClientes/IconoEstrella.png">&nbsp;
-        <img class="icono-Menu" src="../../../assets/img/imgClientes/IconoRayo.png">&nbsp;
-        <img class="icono-Menu" src="../../../assets/img/imgClientes/Iconocupon.png">
+    <div class="dropdown-categories-wrapper">
+      <div class="foo"></div>
+      <div class="wrapper">
+        <app-drop-down [onClickItem]="BusquedaCategory" [dropdownIsShown]="dropdownIsShown" [items]="categories_Pro">
+        </app-drop-down>
       </div>
+      <div class="foo"></div>
     </div>
-  </div> -->
+
+  </div>
 
   <div class="body-header">
     <div class="content-banner" *ngIf="router.url !== '/home/search-product'">
@@ -108,12 +97,8 @@
         <span class="badge badge-info">{{ productOne_Pro[0].price | currency: "COP":"symbol-narrow" }}</span>
       </div>
     </div>&nbsp;&nbsp;&nbsp;&nbsp;
-    <div [class]="router.url === '/home/search-product' ? 'content-user-menuVertical' : 'content-user'">
-      <span class="txt-user text-primary">{{'¡BIENVENIDO!'}}</span>
-      <div class="img-card-user text-center">
-        <img src="../../../assets/img/imgClientes/Iusuario.png">&nbsp;
-        <span class="txt-user">User master</span>
-      </div>
+    <div class="content-user" *ngIf="router.url === '/home'">
+
       <div class="img-card-userMenu text-center">
         <img src="../../../assets/img/imgClientes/ICorazon.png">&nbsp;
         <span class="txt-user">Lista de deseos</span>
@@ -136,17 +121,11 @@
       </div>
     </div>
   </div>
-
   <!-- Publicidad -->
   <app-carousel-publicidad *ngIf="router.url === '/home'"></app-carousel-publicidad>
 
-
   <div class="body-content">
 
-    <div *ngIf="router.url === '/home/search-product'" class="content-body-search">
-      <app-search-product [advanced]="_advanced" [location]="" [categoryFather]="_categoryFather" [published]=""
-        [maximum]="" [minimum]=""> </app-search-product>
-    </div>
     <div *ngIf="router.url === '/home'" class="content-body-product1">
       <p><img src="../../../assets/img/imgClientes/IestrellaA.png" alt="">TOP MEJORES PRODUCTOS</p><br>
       <div class="banner-item-prodcts5">
@@ -200,7 +179,14 @@
       </div>
     </div>
   </div>
+
+
+  <div *ngIf="router.url === '/home/search-product'" >
+    <app-search-product [categories]="categories_Pro" [advanced]="_advanced" [location]="" [categoryFather]="_categoryFather" [published]=""
+      [maximum]="" [minimum]=""> </app-search-product>
+  </div>
   <app-carousel-publicidad *ngIf="router.url === '/home/search-product'"></app-carousel-publicidad>
+
   <div class="more-information">
     <div class="information" *ngFor="let item of Information">
       <img [src]="item.img">&nbsp;
@@ -216,9 +202,9 @@
   <div class="subFooter">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h5 class="text-dark">{{'Aprysa.com' | uppercase}}</h5>
+        <h5 class="text-dark">{{'Portalmayorista.com.co' | uppercase}}</h5>
         <h3 class="titleBlue">
-          Vender con nosotros es muy fácil
+          Nunca sabes lo que quieres hasta que lo ves en oferta
         </h3>
       </div>
     </div><br><br>
@@ -232,7 +218,7 @@
       </div>
       <div class="col-md-4 text-center moverIcono">
         <h3><i class="fa fa-shield iconoBandera"></i></h3>
-        <h5 class="text-dark">Publica con confianza</h5>
+        <h5 class="text-dark">Compra con confianza</h5>
         <p class="text-muted">
           Su producto estara seguro, no compartiremos tu información.
         </p>
@@ -252,13 +238,13 @@
     <div class="">
       <div class="row footer-content">
         <div class="col-md-4 footerColum">
-          <h4 class="text-center">{{'aprysa.com' | uppercase}}</h4>
+          <h4 class="text-center">{{'Portalmayorista.com.co' | uppercase}}</h4>
           <p class="text-center">
-            © 2019 Your company. All rights reserved
+            © 2021 Your company. All rights reserved
           </p>
         </div>
         <div class="col-md-4 footerColum">
-          <h4 class="text-center">{{ "aprysa.com" | uppercase }}</h4>
+          <h4 class="text-center">{{ "Portalmayorista.com.co" | uppercase }}</h4>
           <p class="text-center">
             Quienes somos?
           </p>
@@ -272,26 +258,26 @@
         <div class="col-md-4 footerColum">
           <h4 class="text-center">{{ "Redes" | uppercase }}</h4>
           <p class="text-center">
-            <div class="social-buttons">
-              <a href="https://es-la.facebook.com/" target="_blank"
-                class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
-                <span class="social-button__inner">
-                  <i class="fa fa-facebook-f"></i>
-                </span>
-              </a>
-              <a href="https://www.instagram.com/?hl=es-la" target="_blank"
-                class="social-buttons__button social-button social-button--instagram" aria-label="instagram">
-                <span class="social-button__inner">
-                  <i class="fa fa-instagram"></i>
-                </span>
-              </a>
-              <a href="https://twitter.com/?lang=es" target="_blank"
-                class="social-buttons__button social-button social-button--twitter" aria-label="twitter">
-                <span class="social-button__inner">
-                  <i class="fa fa-twitter"></i>
-                </span>
-              </a>
-            </div>
+          <div class="social-buttons">
+            <a href="https://es-la.facebook.com/" target="_blank"
+              class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
+              <span class="social-button__inner">
+                <i class="fa fa-facebook-f"></i>
+              </span>
+            </a>
+            <a href="https://www.instagram.com/?hl=es-la" target="_blank"
+              class="social-buttons__button social-button social-button--instagram" aria-label="instagram">
+              <span class="social-button__inner">
+                <i class="fa fa-instagram"></i>
+              </span>
+            </a>
+            <a href="https://twitter.com/?lang=es" target="_blank"
+              class="social-buttons__button social-button social-button--twitter" aria-label="twitter">
+              <span class="social-button__inner">
+                <i class="fa fa-twitter"></i>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

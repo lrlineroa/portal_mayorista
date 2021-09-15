@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   // img products
   public nullImage = "null";
+  public dropdownIsShown:boolean=false;
   imgDefault: any = '../../../../../assets/img/img_Default/default1.png'
   urlImgs: any;
   // 
@@ -112,7 +113,7 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
+  
 
 
   // Busqueda avanzada - Filtros
@@ -127,7 +128,7 @@ export class HomeComponent implements OnInit {
     this._advanced = advanced;
     this.router.navigate(['/home/search-product']);
   }
-  BusquedaCategory(idCategory: string) {
+  public BusquedaCategory:Function=(idCategory: string)=> {
     this._categoryFather = idCategory;
     this.router.navigate(['/home/search-product']);
   }
@@ -136,7 +137,21 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/home/search-product']);
   }
 
-
+  toggleDropdown() {
+    if(!this.dropdownIsShown){
+      document.getElementById("myDropdown").classList.toggle("show");
+      this.dropdownIsShown=true;
+    }else{
+      this.dropdownIsShown=false;
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 
 }
 
