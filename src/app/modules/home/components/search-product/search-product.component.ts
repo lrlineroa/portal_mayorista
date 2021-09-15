@@ -78,7 +78,7 @@ export class SearchProductComponent implements OnInit {
     await this.rest.get(`/rest/products?advanced=${this._advanced}&categoryFather=${this._categoryFather}`).then((productsdata) => {
       console.log(productsdata);
       this.products = productsdata.data.data.data
-      console.log(this.products);
+      console.log({productsdata});
     });
     this.showSpinner = false
   }
