@@ -1,0 +1,33 @@
+// endpoint
+//http://localhost:9090/api/rest/categories/{withContent}
+// donde withContent es un booleano que me permite ver si voy a retornar las categorías con sus productos y paginación
+//o no
+//withContent será por defecto false para que sea compatible con el endpoint que ya está.
+// Reponse:
+{
+    "status": "success",
+    "categories": [
+        {
+            "category_id":1,
+            "name": "Carros",
+            "data": {
+                "current_page": 1,
+                "products": [
+                    "productos"
+                ],
+                "first_page_url": "http://localhost:9090/api/rest/categories/1/products?page=1",
+                "from": 1,
+                "last_page": 40,
+                "last_page_url": "http://localhost:9090/api/rest/categories/1/products?page=40",
+                "next_page_url": "http://localhost:9090/api/rest/categories/1/products?page=2",
+                "previous_page_url": "null",
+                "path": "http://localhost:9090/api/rest/categories/1/products",
+                "per_page": 28,
+                "prev_page_url": null,
+                "to":  12,
+                "total": 1102
+            },
+            "priceMax": 12000000
+        }
+    ]
+}
