@@ -17,25 +17,21 @@
   justify-content: space-between;
   padding: 15px;
   justify-items: center;
-  
-  box-shadow:0 0 15px 0 red ;
-  
+
+  box-shadow: 0 0 15px 0 red;
 }
 .titleNav {
   width: auto;
-  color: rgb(232, 31, 31);
+  color: #fc4206;
 }
 
 .container__login {
- 
   background-color: rgb(242, 242, 242);
-  
 }
 
 .container__fondo {
   background-color: rgb(242, 242, 242);
 }
-
 
 //color Titulo
 
@@ -51,7 +47,7 @@
 //   border-color: #4E65F8
 // }
 .titleNav {
-  color: orange;
+  color: #fc4206;
   font-weight: 1000;
   display: inline;
   align-items: center;
@@ -107,7 +103,6 @@ nav:hover button {
   border: rgb(199, 195, 195) 1px solid;
   box-shadow: -1px -1px gray;
 }
-
 
 // boton
 .sombrasBTN:hover {
