@@ -1,39 +1,5 @@
-<div class="content-body-product">
-  <div>
-    <p><img src="../../../assets/img/imgClientes/IestrellaA.png" alt="">Busqueda</p>
-  </div>
-  <div class="banner-item-prodcts5">
-    <div *ngFor="let product of products || []" class="item-product">
-      <span>{{product.name}}-{{product.id}}</span>
-      <div class="img-card text-center">
-        <img [src]="(product.image1 === nullImage) || (product.image1 === null) ? imgDefault : urlImgs+product.image1">
-      </div>
-      <div class="accions">
-        <img src="../../../assets/img/imgClientes/IVista.png">&nbsp;
-        <img src="../../../assets/img/imgClientes/ICorazon.png">&nbsp;
-        <!-- <img src="../../../assets/img/imgClientes/ICOmpartir.png">&nbsp; -->
-        <img src="../../../assets/img/imgClientes/ICOmment.png">&nbsp;
-        <span class="badge badge-info">{{ product.price | currency: "COP":"symbol-narrow" }}</span>
-      </div>
-    </div>
+<div class="search-product-wrapper">
+  <div *ngIf="!this._categoryFather">
+    
   </div>
 </div>
-<div class="text-center" *ngIf="products.length === 0">
-  <h4 class="text-muted">Lo sentimos, no encontramos resultados para su busqueda</h4>
-  <app-animation-spinner></app-animation-spinner>
-  <img src="../../../../../assets/img/imgSearch/busqueda.png" style="width: 100px; height: 100px; margin: 30px;" alt="">
-</div>
-<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" tabindex="-1" aria-disabled="true">Anterior</a>
-    </li>
-    <li class="page-item"><a class="page-link">1</a></li>
-    <li class="page-item"><a class="page-link">2</a></li>
-    <li class="page-item"><a class="page-link">3</a></li>
-    <li class="page-item">
-      <a class="page-link">Siguiente</a>
-    </li>
-  </ul>
-</nav>
