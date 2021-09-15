@@ -1,5 +1,8 @@
 <div class="search-product-wrapper">
-  <div *ngIf="!this._categoryFather">
-    
+  <div *ngIf="!this._categoryFather" class="categories_wrapper">
+   <app-category-view 
+    *ngFor="let category of categories"
+    [category]="category"
+   ></app-category-view> 
   </div>
 </div>

@@ -19,8 +19,9 @@ import { SearchProductComponent } from './components/search-product/search-produ
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { AnimationSpinnerComponent } from './components/animation-spinner/animation-spinner.component';
 import { DropDownComponent } from './components/drop-down/drop-down.component';
+import { CategoryViewComponent } from './components/category-view/category-view.component';
 @NgModule({
-  declarations: [PageHomeComponent, ProductBestSellerComponent, PageProductComponent, MapaProductComponent, HomeComponent, CarouselPublicidadComponent, SearchProductComponent, LoadingSpinnerComponent, AnimationSpinnerComponent,DropDownComponent],
+  declarations: [CategoryViewComponent,PageHomeComponent, ProductBestSellerComponent, PageProductComponent, MapaProductComponent, HomeComponent, CarouselPublicidadComponent, SearchProductComponent, LoadingSpinnerComponent, AnimationSpinnerComponent,DropDownComponent],
   imports: [
     CommonModule,
     CoreModule,

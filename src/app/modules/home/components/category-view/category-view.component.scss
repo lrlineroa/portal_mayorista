@@ -1,0 +1,27 @@
+$appOrangeColor: #FE613A;
+.category-wrapper{
+    align-self: stretch;
+    display:flex;
+    justify-content:center;
+    .category{
+        background-color: white;
+        border-radius: 20px;
+        height:389px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        flex:0.95;
+        margin:20px;
+        padding:20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        .title{
+            font-size: 30px;
+            color: $appOrangeColor;
+            .image{
+                width:51px;
+                height:51px;
+            }
+            border-bottom: 1px solid #ccc;
+        }
+
+    }
+}
