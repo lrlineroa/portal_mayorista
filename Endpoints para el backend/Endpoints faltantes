@@ -1,6 +1,9 @@
 api/rest/productstop //los 5 productos más vendidos
 
-api//rest/productstop2 //los 3 que tienen más me gusta
+api/rest/productstop2 //los 3 que tienen más me gusta
 
 api/rest/productstop3 //los 3 más vistos
 
+most_sold:1 o 2,
+
+api/rest/products/{product_id}/purchase/{id_usuario}
