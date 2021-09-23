@@ -7,3 +7,8 @@ api/rest/productstop3 //los 3 más vistos
 most_sold:1 o 2,
 
 api/rest/products/{product_id}/purchase/{id_usuario}
+
+api/rest/categories/true
+
+/api/rest/product/{product_id}/seen
+/api/rest/product/{product_id}/like
