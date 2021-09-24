@@ -1,0 +1,56 @@
+.banner-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+  }
+
+  @media (max-width: 1181px) {
+    .carousel {
+    width: 800px;
+    height: 200px;
+  }
+    
+    .carousel-item img {
+      width: 700px;
+      height: 200px;
+    }
+    .product-item-one {
+      height: 380px;
+    }
+    .img-card-one img{
+      width: 210px;
+      height: 210px;
+    }
+  }
+
+  .carousel-item img {
+    width: 800px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+  .carousel-indicators li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      text-indent: 0;
+      cursor: pointer;
+      border: none;
+      border-radius: 800%;
+      background-color: #818181;    
+  }
+  .carousel-indicators .active {
+      width: 10px;
+      height: 10px;
+      background-color: #5a5a5a;
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+      height: 30px;
+      width: 30px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 100%;
+      border: 1px solid black;
+  }

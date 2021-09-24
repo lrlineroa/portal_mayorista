@@ -1,12 +1,18 @@
 <div class="item-carousel">
   <div id="carouselExampleFade2" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li *ngFor="let image of images;index as i" [attr.data-target]="'#carouselExampleCaptions'+(i+1)"
+        [attr.data-slide-to]="i" [class]="i==0 ?'active':''"></li>
+      <!-- <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> -->
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-interval="3000">
+      <div [class]="'carousel-item '+ (i==0 ?'active':'')  " data-interval="3000"
+        *ngFor="let image of images;index as i">
+        <img [src]="image">
+      </div>
+      <!-- <div class="carousel-item active" data-interval="3000">
         <img src="../../../../../assets/img/imgPromo/Promocion4.webp">
       </div>
       <div class="carousel-item" data-interval="3000">
@@ -14,7 +20,7 @@
       </div>
       <div class="carousel-item" data-interval="3000">
         <img src="../../../../../assets/img/imgPromo/Promocion4.png">
-      </div>
+      </div> -->
     </div>
     <a class="carousel-control-prev" href="#carouselExampleFade2" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

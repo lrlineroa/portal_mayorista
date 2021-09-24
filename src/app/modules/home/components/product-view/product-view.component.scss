@@ -1,0 +1,87 @@
+@import "../../../../../assets/icons\ fonts/font/flaticon.css";
+$appOrangeColor: #fe613a;
+.product {
+    display: flex;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    // align-self: stretch;
+    flex-direction: column;
+    align-items: center;
+    .header {
+        display: flex;
+        align-self: stretch;
+        justify-content: flex-end;
+        padding-top: 10px;
+        padding-right: 10px;
+        .icon {
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .icon:hover {
+            transform: translate(0px, -4px);
+            color: red;
+        }
+    }
+    .img-card {
+        margin: 0%;
+        width: 90%;
+        flex: 1;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.4s;
+        img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+    }
+
+    .img-card:hover {
+        transform: translate(0px, -4px);
+    }
+    .name {
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    .price {
+        color: $appOrangeColor;
+        font-size: 1.3em;
+    }
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        align-self: stretch;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        .add-to-cart-button {
+            height: 40px;
+            background-color: #666666;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            margin-right: 5px;
+        }
+        .shop-button {
+            cursor: pointer;
+            height: 40px;
+            background: linear-gradient(270deg, rgba(255, 54, 5, 1) 0%, rgba(255, 51, 48, 1) 100%);
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            justify-content: center;
+        }
+    }
+    padding-bottom: 10px;
+    margin-top: 25px;
+}

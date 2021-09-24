@@ -1,0 +1,9 @@
+{
+    "prod": {
+      "category_id": "12",
+      "name": "Producto de andrés",
+      "price": 150000,
+      "description": "Esta es la descripción del producto de andrés",
+      "image10": ""
+    }
+  }

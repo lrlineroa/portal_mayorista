@@ -5,5 +5,15 @@
                 [src]="(category.image === null) || (category.image === null) ? imgDefault : urlImgs+category.image">&nbsp;
             {{category.name}}
         </div>
+        <div class="products-wrapper">
+            <app-product-view
+            class='product-wrapper'
+            *ngFor="let product of category.products_father.slice(0,4)"
+            [product]="product"
+            >
+            </app-product-view>
+        </div>
     </div>
 </div>
+
+<!-- *ngFor="let product of category.products_father.slice(0,5)" [product]="product" -->

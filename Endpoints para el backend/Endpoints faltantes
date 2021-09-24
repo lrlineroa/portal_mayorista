@@ -12,3 +12,5 @@ api/rest/categories/true
 
 /api/rest/product/{product_id}/seen
 /api/rest/product/{product_id}/like
+
+- enviar al back la información con el flag most_sold.

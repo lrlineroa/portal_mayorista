@@ -20,8 +20,11 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { AnimationSpinnerComponent } from './components/animation-spinner/animation-spinner.component';
 import { DropDownComponent } from './components/drop-down/drop-down.component';
 import { CategoryViewComponent } from './components/category-view/category-view.component';
+import { AdMainBannerComponent } from './components/ad-main-banner/ad-main-banner.component';
+import { ProductViewComponent } from './components/product-view/product-view.component';
+
 @NgModule({
-  declarations: [CategoryViewComponent,PageHomeComponent, ProductBestSellerComponent, PageProductComponent, MapaProductComponent, HomeComponent, CarouselPublicidadComponent, SearchProductComponent, LoadingSpinnerComponent, AnimationSpinnerComponent,DropDownComponent],
+  declarations: [ProductViewComponent,CategoryViewComponent,PageHomeComponent, ProductBestSellerComponent, PageProductComponent, MapaProductComponent, HomeComponent, CarouselPublicidadComponent, SearchProductComponent, LoadingSpinnerComponent, AnimationSpinnerComponent,DropDownComponent,AdMainBannerComponent],
   imports: [
     CommonModule,
     CoreModule,

@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?b2aad6577a9c8b20f5cb0be91b435222") format("truetype"),
+url("./flaticon.woff?b2aad6577a9c8b20f5cb0be91b435222") format("woff"),
+url("./flaticon.woff2?b2aad6577a9c8b20f5cb0be91b435222") format("woff2"),
+url("./flaticon.eot?b2aad6577a9c8b20f5cb0be91b435222#iefix") format("embedded-opentype"),
+url("./flaticon.svg?b2aad6577a9c8b20f5cb0be91b435222#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-shopping-cart:before {
+    content: "\f101";
+}
+.flaticon-like:before {
+    content: "\f102";
+}
+.flaticon-add-to-cart:before {
+    content: "\f103";
+}

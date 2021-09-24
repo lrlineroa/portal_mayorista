@@ -1,0 +1,37 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?b2aad6577a9c8b20f5cb0be91b435222") format("truetype"),
+url("./flaticon.woff?b2aad6577a9c8b20f5cb0be91b435222") format("woff"),
+url("./flaticon.woff2?b2aad6577a9c8b20f5cb0be91b435222") format("woff2"),
+url("./flaticon.eot?b2aad6577a9c8b20f5cb0be91b435222#iefix") format("embedded-opentype"),
+url("./flaticon.svg?b2aad6577a9c8b20f5cb0be91b435222#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "shopping-cart": "\f101",
+    "like": "\f102",
+    "add-to-cart": "\f103",
+);
+
+.flaticon-shopping-cart:before {
+    content: map-get($flaticon-map, "shopping-cart");
+}
+.flaticon-like:before {
+    content: map-get($flaticon-map, "like");
+}
+.flaticon-add-to-cart:before {
+    content: map-get($flaticon-map, "add-to-cart");
+}

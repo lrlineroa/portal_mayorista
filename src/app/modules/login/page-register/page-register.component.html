@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg  sticky-top">
     <h4 class="titleNav">
       <span [routerLink]="['/home']">
-        {{'aprysa.com' | uppercase}}</span>
+        {{'portalmayorista.com' | uppercase}}</span>
     </h4>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,103 +20,62 @@
     </div>
   </nav>
   <!--Singup-->
-  <div class="container titulo">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h3> Crear Cuenta</h3>
-      </div>
-      <hr />
-    </div>
-  </div>
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <form class="form-container">
+      <form class="form-container col-md-7">
+        <div class="col-md-12 text-center">
+          <h3 class="title">Crear cuenta</h3>
+        </div>
+        <!-- social -->
+        <div class="form-group justify-content-center container__elementos">
+          <div class="caja__iconos">
+            <div class="centro">
+              <i class="
+                          borde__icono
+                          fa fa-facebook-square
+                          iconoFacebook
+                          rebote
+                        "></i>
+            </div>
+            <div class="centro borde">
+              <i class="borde__icono fa fa-google iconoGoogle rebote"></i>
+            </div>
+          </div>
+        </div>
+        <!-- social -->
         <!--Seccion 1-->
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label><i class="fa fa-user-circle"></i> Primer nombre</label>
-            <input [(ngModel)]="user.first_name" type="text" class="form-control form-control-sm" name="first_name"
-              placeholder="Primer nombre" />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="first_surname"><i class="fa fa-user-circle"></i> Primer apellido</label>
-            <input [(ngModel)]="user.first_surname" type="text" class="form-control form-control-sm"
-              name="first_surname" placeholder="Primer apellido" />
-          </div>
-          <!-- <div class="form-group col-md-3">
-            <label for="document_type_id"><i class="fa fa-address-book"></i> Tipo de Documento</label>
-            <select [(ngModel)]="user.document_type_id" class="form-control form-control-sm" name="document_type_id">
-              <option selected="first">Seleccione</option>
-              <option *ngIf="countries.length === 0">No hay datos</option>
-              <option *ngFor="let item of documentTypes" [value]="item.id">{{item.name}} - {{item.description}}</option>
-            </select>
-          </div>
-          <div class="form-group col-md-3">
-            <label for="document_number"><i class="fa fa-address-card"></i> Documento</label>
-            <input placeholder="Documento" [(ngModel)]="user.document_number" class="form-control form-control-sm"
-              type="text" value="" name="document" />
-          </div> -->
+
+
+        <div class="form-group">
+          <!-- <label><i class="fa fa-user-circle"></i> Primer nombre</label> -->
+          <input [(ngModel)]="user.first_name" type="text" class="form-control form-control-sm" name="first_name"
+            placeholder="Primer nombre" />
         </div>
-        <hr />
-        <!-- Seccion 2
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="inputCountry"><i class="fa fa-globe"></i> Pais</label>
-            <select [(ngModel)]="user.country_id" id="inputCountry" class="form-control form-control-sm"
-              name="inputCountry">
-              <option selected="first">Seleccione</option>
-              <option *ngIf="countries.length === 0" value="null">No hay datos</option>
-              <option *ngFor="let item of countries" [value]="item.id">{{item.name}}</option>
-            </select>
-          </div>
-          <div class=" form-group col-md-4">
-            <label for="inputProvince"><i class="fa fa-flag-o"></i> Provincia</label>
-            <select [(ngModel)]="user.state_id" id="inputProvince" class="form-control form-control-sm" name="state_id">
-              <option selected="first">Seleccione</option>
-              <option *ngIf="countries.length === 0">No hay datos</option>
-              <option *ngFor="let item of states" [value]="item.id">{{item.name}}</option>
-            </select>
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputCity"><i class="fa fa-flag"></i> Ciudad</label>
-            <select [(ngModel)]="user.city_id" id="inputCity" class="form-control form-control-sm mce-placeholder"
-              name="city_id">
-              <option selected="first">Seleccione</option>
-              <option *ngIf="countries.length === 0">No hay datos</option>
-              <option *ngFor="let item of cities" [value]="item.id">{{item.name}}</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <!-- <label for="first_surname"><i class="fa fa-user-circle"></i> Primer apellido</label> -->
+          <input [(ngModel)]="user.first_surname" type="text" class="form-control form-control-sm" name="first_surname"
+            placeholder="Primer apellido" />
         </div>
-        <hr /> -->
         <!--Seccion 3-->
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="email"><i class="fa fa-envelope"></i> Correo</label>
-            <input placeholder="Email" [(ngModel)]="user.email" class="form-control form-control-sm" type="text"
-              value="" name="email" />
-          </div>
-          <div class="form-group col-md-3">
-            <label for="password"><i class="fa fa-keyboard-o"></i> Contraseña</label>
-            <input placeholder="password" [(ngModel)]="user.password" class="form-control form-control-sm"
-              type="password" value="" name="password" />
-          </div>
-          <div class="form-group col-md-3">
-            <label for="repasswrod"><i class="fa fa-keyboard-o"></i> Confirmar</label>
-            <input placeholder="password" [(ngModel)]="repasswrod" class="form-control form-control-sm" type="password"
-              value="" name="Repassword" />
-          </div>
+
+        <div class="form-group">
+          <input placeholder="Email" [(ngModel)]="user.email" class="form-control form-control-sm" type="text" value=""
+            name="email" />
+        </div>
+        <div class="form-group">
+
+          <input placeholder="password" [(ngModel)]="user.password" class="form-control form-control-sm" type="password"
+            value="" name="password" />
+        </div>
+        <div class="form-group">
+          <input placeholder="Confirmar" [(ngModel)]="repasswrod" class="form-control form-control-sm" type="password"
+            value="" name="Repassword" />
         </div>
 
-        <button (click)="Singup()" type="button" class="btn btn-block btn-light-outline sombrasBTN">
-          <i class="fa fa-user-plus"></i> Crear Cuenta
+        <button (click)="Singup()" type="button" class="register-button">
+          Registrarse
         </button>
-        <div class="text-center iconosLogin">
-          <h3>
-            <i class="fa fa-facebook-square iconoFacebook rebote"></i>&nbsp;
-            <i class="fa fa-twitter-square iconoTwitter rebote"></i>&nbsp;
-            <i class="fa fa-google-plus-official iconoGamil rebote"></i>
-          </h3>
-        </div>
+
       </form>
     </div>
   </div>

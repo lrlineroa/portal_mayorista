@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   // img products
   public nullImage = "null";
-  public dropdownIsShown:boolean=false;
+  public dropdownIsShown: boolean = false;
   imgDefault: any = '../../../../../assets/img/img_Default/default1.png'
   urlImgs: any;
+  public mainBImages: Array<string> = [];
+  public footerBImages: Array<string> = [];
   // 
   public categories_Pro = [
 
@@ -48,6 +50,35 @@ export class HomeComponent implements OnInit {
     this.GetProductsTop2();
     this.GetProductsTop3();
     this.GetCategories();
+    this.getMainBImages();
+    this.getFooterBImages();
+  }
+
+  getMainBImages() {
+
+    this.rest.get(`/rest/main`,
+      {
+        ignoreMessage: false
+      }
+    ).then((res) => {
+      if (res.data.length > 0) {
+        this.mainBImages = res.data.map((fileName: string) => `${apiImagenesUrl.url}/assets/main_b/${fileName}`
+        );
+      }
+    });
+  }
+  getFooterBImages() {
+
+    this.rest.get(`/rest/footer`,
+      {
+        ignoreMessage: false
+      }
+    ).then((res) => {
+      if (res.data.length > 0) {
+        this.footerBImages = res.data.map((fileName: string) => `${apiImagenesUrl.url}/assets/footer_b/${fileName}`
+        );
+      }
+    });
   }
 
   // Get information Page Home
@@ -103,17 +134,18 @@ export class HomeComponent implements OnInit {
   }
 
   GetCategories() {
-    this.rest.get(`/rest/categories`,
+    this.rest.get(`/rest/categories/products`,
       {
         ignoreMessage: false
       }
     ).then((res: any) => {
+      console.log('res',res);
       if (res.length > 0) {
         this.categories_Pro = res;
       }
     });
   }
-  
+
 
 
   // Busqueda avanzada - Filtros
@@ -128,7 +160,7 @@ export class HomeComponent implements OnInit {
     this._advanced = advanced;
     this.router.navigate(['/home/search-product']);
   }
-  public BusquedaCategory:Function=(idCategory: string)=> {
+  public BusquedaCategory: Function = (idCategory: string) => {
     this._categoryFather = idCategory;
     this.router.navigate(['/home/search-product']);
   }
@@ -138,11 +170,11 @@ export class HomeComponent implements OnInit {
   }
 
   toggleDropdown() {
-    if(!this.dropdownIsShown){
+    if (!this.dropdownIsShown) {
       document.getElementById("myDropdown").classList.toggle("show");
-      this.dropdownIsShown=true;
-    }else{
-      this.dropdownIsShown=false;
+      this.dropdownIsShown = true;
+    } else {
+      this.dropdownIsShown = false;
       var dropdowns = document.getElementsByClassName("dropdown-content");
       for (let i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];

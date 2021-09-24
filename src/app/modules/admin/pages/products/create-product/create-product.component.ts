@@ -81,29 +81,30 @@ export class CreateProductComponent implements OnInit {
 
   Validar(forma: NgForm) {
     const prod = forma.value
-    if (1 === 1) {
-      // ?XDEBUG_SESSION_START=PHPSTORM
-      this.rest.post('/store/products', {
-        body: prod,
-        ignoreMessage: false
-      }).then((res) => {
-        console.log(res);
-        if (res.status === 'success') {
-          this.validateProduct = true;
-          this.notification.NotificationInfo('Click en siguiente', '', 6000);
-          this.productoCreateId = res.data.id;
-          this.productoCreateName = res.data.name;
-          console.log(this.productoCreateId + ' ' + this.productoCreateName);
-        } else if (res.data[0] === 'The name and category have already been registered.') {
-          this.validateProduct = false;
-          this.notification.NotificationInfo('El nombre ya existe en tus productos', '', 6000);
-          console.log(res.data);
-        } else {
-          this.validateProduct = false;
-          this.notification.NotificationInfo('Por favor validar información.', '', 6000);
-        }
-      });
-    }
+    console.log({prod});
+    // if (1 === 1) {
+    //   // ?XDEBUG_SESSION_START=PHPSTORM
+    //   this.rest.post('/store/products', {
+    //     body: prod,
+    //     ignoreMessage: false
+    //   }).then((res) => {
+    //     console.log(res);
+    //     if (res.status === 'success') {
+    //       this.validateProduct = true;
+    //       this.notification.NotificationInfo('Click en siguiente', '', 6000);
+    //       this.productoCreateId = res.data.id;
+    //       this.productoCreateName = res.data.name;
+    //       console.log(this.productoCreateId + ' ' + this.productoCreateName);
+    //     } else if (res.data[0] === 'The name and category have already been registered.') {
+    //       this.validateProduct = false;
+    //       this.notification.NotificationInfo('El nombre ya existe en tus productos', '', 6000);
+    //       console.log(res.data);
+    //     } else {
+    //       this.validateProduct = false;
+    //       this.notification.NotificationInfo('Por favor validar información.', '', 6000);
+    //     }
+    //   });
+    // }
   }
 
   VerDatos() {

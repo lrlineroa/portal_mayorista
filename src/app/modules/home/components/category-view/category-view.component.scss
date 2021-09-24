@@ -3,6 +3,7 @@ $appOrangeColor: #FE613A;
     align-self: stretch;
     display:flex;
     justify-content:center;
+    margin-bottom: 50px;
     .category{
         background-color: white;
         border-radius: 20px;
@@ -13,6 +14,8 @@ $appOrangeColor: #FE613A;
         padding:20px;
         padding-left: 30px;
         padding-right: 30px;
+        display: flex;
+        flex-direction:column;
         .title{
             font-size: 30px;
             color: $appOrangeColor;
@@ -22,6 +25,16 @@ $appOrangeColor: #FE613A;
             }
             border-bottom: 1px solid #ccc;
         }
+        .products-wrapper{
+            display: flex;
+            align-self: stretch;
+            flex:1;
+            .product-wrapper{
+                flex:1;
+                display: flex;
+                padding:10px;
+            }
 
+        }   
     }
 }

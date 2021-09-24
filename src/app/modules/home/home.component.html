@@ -2,7 +2,7 @@
 
   <div class="header">
     <div class="navbar">
-      <div class="brand">
+      <div [routerLink]="[ '/']" class="brand">
         Portal Mayorista
       </div>
       <div class="searchbar-wrapper">
@@ -37,22 +37,19 @@
 
   <div class="body-header">
     <div class="content-banner" *ngIf="router.url !== '/home/search-product'">
+      <!-- <app-ad-main-banner></app-ad-main-banner> -->
       <div class="banner-item">
         <div id="carouselExampleFade1" class="carousel slide carousel-fade">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions1" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions3" data-slide-to="2"></li>
+            <li *ngFor="let mainBImage of mainBImages; index as i" [attr.data-target]="'#carouselExampleCaptions'+(i+1)"
+              [attr.data-slide-to]="i" [class]="i==0 ?'active':''"></li>
+            <!-- <li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions3" data-slide-to="2"></li> -->
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="4000">
-              <img src="../../../assets/img/imgPromo/img3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="4000">
-              <img src="../../../assets/img/imgPromo/img2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="4000">
-              <img src="../../../assets/img/imgPromo/img1.png" class="d-block w-100" alt="...">
+            <div *ngFor="let mainBImage of mainBImages; index as i" [class]="'carousel-item '+ (i==0 ?'active':'')  "
+              data-interval="4000">
+              <img [src]="mainBImage" class="d-block w-100" alt="...">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleFade1" role="button" data-slide="prev">
@@ -122,7 +119,7 @@
     </div>
   </div>
   <!-- Publicidad -->
-  <app-carousel-publicidad *ngIf="router.url === '/home'"></app-carousel-publicidad>
+  <app-carousel-publicidad *ngIf="router.url === '/home'" [images]="footerBImages"></app-carousel-publicidad>
 
   <div class="body-content">
 
@@ -181,9 +178,9 @@
   </div>
 
 
-  <div *ngIf="router.url === '/home/search-product'" >
-    <app-search-product [categories]="categories_Pro" [advanced]="_advanced" [location]="" [categoryFather]="_categoryFather" [published]=""
-      [maximum]="" [minimum]=""> </app-search-product>
+  <div *ngIf="router.url === '/home/search-product'">
+    <app-search-product [categories]="categories_Pro" [advanced]="_advanced" [location]=""
+      [categoryFather]="_categoryFather" [published]="" [maximum]="" [minimum]=""> </app-search-product>
   </div>
   <app-carousel-publicidad *ngIf="router.url === '/home/search-product'"></app-carousel-publicidad>
 

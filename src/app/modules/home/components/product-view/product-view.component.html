@@ -1,0 +1,23 @@
+<div class="product">
+    <div class="header">
+        <i class="icon flaticon-like"></i>
+    </div>
+    <div class="img-card text-center">
+        <img [src]="(product.image1 === nullImage) || (product.image1 === null) ? imgDefault : urlImgs+product.image1">
+    </div>
+    <div class="name">
+        {{product.name}}
+    </div>
+    <div class="price">
+        {{ product.price | currency: "COP":"symbol-narrow" }}
+    </div>
+    <div class='footer'>
+        <div class="add-to-cart-button">
+            <i style="margin-right:5px " class="flaticon-add-to-cart"></i>
+            Agregar
+        </div>
+        <div class="shop-button">
+            Comprar
+        </div>
+    </div>
+</div>
